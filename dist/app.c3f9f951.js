@@ -123,22 +123,21 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.courseOptions = exports.categories = void 0;
+exports.courseCombinations = exports.categories = void 0;
 var categories = {
-  Deutsch: ["Deutsch"],
-  Fremdsprache: ["Französisch", "Englisch", "Spanisch", "Latein"],
-  "Gesellschaftswissenschaftliches Fach": ["Geschichte", "Sozialkunde", "Erdkunde"],
-  Mathematik: ["Mathematik"],
-  Naturwissenschaft: ["Biologie", "Physik", "Chemie"],
-  Informatik: ["Informatik"],
-  Religionslehre: ["Evangelische Religion", "Katholische Religion"],
-  Sport: ["Sport"],
-  "Künstlerisches Fach": ["Musik", "Kunst"],
-  Philosopihe: ["Philosophie"]
+  Deutsch: ['Deutsch'],
+  Fremdsprache: ['Französisch', 'Englisch', 'Spanisch', 'Latein'],
+  'Gesellschaftswissenschaftliches Fach': ['Geschichte', 'Sozialkunde', 'Erdkunde'],
+  Mathematik: ['Mathematik'],
+  Naturwissenschaft: ['Biologie', 'Physik', 'Chemie'],
+  Informatik: ['Informatik'],
+  Religionslehre: ['Evangelische Religion', 'Katholische Religion'],
+  Sport: ['Sport'],
+  'Künstlerisches Fach': ['Musik', 'Kunst']
 };
 exports.categories = categories;
-var courseOptions = [[categories.Fremdsprache, categories.Mathematik, categories.Deutsch], [categories.Fremdsprache, categories.Naturwissenschaft, categories.Deutsch], [categories.Fremdsprache, categories.Deutsch, categories["Gesellschaftswissenschaftliches Fach"]], [categories.Fremdsprache, categories.Fremdsprache, categories.Mathematik], [categories.Fremdsprache, categories.Fremdsprache, categories.Naturwissenschaft], [categories.Fremdsprache, categories.Fremdsprache, categories["Gesellschaftswissenschaftliches Fach"]], [categories.Fremdsprache, categories.Mathematik, categories.Naturwissenschaft], [categories.Fremdsprache, categories.Mathematik, categories.Informatik], [categories.Fremdsprache, categories.Mathematik, categories["Gesellschaftswissenschaftliches Fach"]], [categories.Fremdsprache, categories.Naturwissenschaft, categories.Naturwissenschaft], [categories.Fremdsprache, categories.Naturwissenschaft, categories["Gesellschaftswissenschaftliches Fach"]], [categories.Fremdsprache, categories.Naturwissenschaft, categories.Informatik], [categories.Mathematik, categories.Naturwissenschaft, categories.Deutsch], [categories.Mathematik, categories.Deutsch, categories["Gesellschaftswissenschaftliches Fach"]], [categories.Mathematik, categories.Naturwissenschaft, categories["Gesellschaftswissenschaftliches Fach"]], [categories.Naturwissenschaft, categories.Naturwissenschaft, categories.Deutsch], [categories.Mathematik, categories.Deutsch, categories.Informatik], [categories.Naturwissenschaft, categories.Deutsch, categories["Gesellschaftswissenschaftliches Fach"]], [categories.Fremdsprache, categories.Mathematik, categories.Sport], [categories.Fremdsprache, categories.Mathematik, categories.Religionslehre], [categories.Fremdsprache, categories.Mathematik, categories["Künstlerisches Fach"]], [categories.Naturwissenschaft, categories.Deutsch, categories.Informatik], [categories.Fremdsprache, categories.Naturwissenschaft, categories.Sport], [categories.Fremdsprache, categories.Naturwissenschaft, categories.Religionslehre], [categories.Fremdsprache, categories.Naturwissenschaft, categories["Künstlerisches Fach"]], [categories.Mathematik, categories.Deutsch, categories.Sport], [categories.Mathematik, categories.Deutsch, categories.Religionslehre], [categories.Mathematik, categories.Deutsch, categories["Künstlerisches Fach"]], [categories.Naturwissenschaft, categories.Deutsch, categories.Sport], [categories.Naturwissenschaft, categories.Deutsch, categories.Religionslehre], [categories.Naturwissenschaft, categories.Deutsch, categories["Künstlerisches Fach"]]];
-exports.courseOptions = courseOptions;
+var courseCombinations = [[categories.Fremdsprache, categories.Mathematik, categories.Deutsch], [categories.Fremdsprache, categories.Naturwissenschaft, categories.Deutsch], [categories.Fremdsprache, categories.Deutsch, categories['Gesellschaftswissenschaftliches Fach']], [categories.Fremdsprache, categories.Fremdsprache, categories.Mathematik], [categories.Fremdsprache, categories.Fremdsprache, categories.Naturwissenschaft], [categories.Fremdsprache, categories.Fremdsprache, categories['Gesellschaftswissenschaftliches Fach']], [categories.Fremdsprache, categories.Mathematik, categories.Naturwissenschaft], [categories.Fremdsprache, categories.Mathematik, categories.Informatik], [categories.Fremdsprache, categories.Mathematik, categories['Gesellschaftswissenschaftliches Fach']], [categories.Fremdsprache, categories.Naturwissenschaft, categories.Naturwissenschaft], [categories.Fremdsprache, categories.Naturwissenschaft, categories['Gesellschaftswissenschaftliches Fach']], [categories.Fremdsprache, categories.Naturwissenschaft, categories.Informatik], [categories.Mathematik, categories.Naturwissenschaft, categories.Deutsch], [categories.Mathematik, categories.Deutsch, categories['Gesellschaftswissenschaftliches Fach']], [categories.Mathematik, categories.Naturwissenschaft, categories['Gesellschaftswissenschaftliches Fach']], [categories.Naturwissenschaft, categories.Naturwissenschaft, categories.Deutsch], [categories.Mathematik, categories.Deutsch, categories.Informatik], [categories.Naturwissenschaft, categories.Deutsch, categories['Gesellschaftswissenschaftliches Fach']], [categories.Fremdsprache, categories.Mathematik, categories.Sport], [categories.Fremdsprache, categories.Mathematik, categories.Religionslehre], [categories.Fremdsprache, categories.Mathematik, categories['Künstlerisches Fach']], [categories.Naturwissenschaft, categories.Deutsch, categories.Informatik], [categories.Fremdsprache, categories.Naturwissenschaft, categories.Sport], [categories.Fremdsprache, categories.Naturwissenschaft, categories.Religionslehre], [categories.Fremdsprache, categories.Naturwissenschaft, categories['Künstlerisches Fach']], [categories.Mathematik, categories.Deutsch, categories.Sport], [categories.Mathematik, categories.Deutsch, categories.Religionslehre], [categories.Mathematik, categories.Deutsch, categories['Künstlerisches Fach']], [categories.Naturwissenschaft, categories.Deutsch, categories.Sport], [categories.Naturwissenschaft, categories.Deutsch, categories.Religionslehre], [categories.Naturwissenschaft, categories.Deutsch, categories['Künstlerisches Fach']]];
+exports.courseCombinations = courseCombinations;
 },{}],"js/app.js":[function(require,module,exports) {
 "use strict";
 
@@ -148,62 +147,96 @@ function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArra
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
 function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-var courseContainerDIV = document.querySelector(".course-container");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var courseContainerDIV = document.querySelector('.course-container');
 var selectedCourses = []; // create cours dom elements
 
 Object.values(_courses.categories).flat().forEach(createCourseElement);
 
 function createCourseElement(course) {
-  var element = document.createElement("div");
-  element.className = "course";
+  var element = document.createElement('div');
+  element.className = 'course';
   element.id = course;
   element.innerHTML = "<span class=\"course-name\">".concat(course, "</span>");
   courseContainerDIV.appendChild(element);
-  element.addEventListener("click", eventHandler);
+  element.addEventListener('click', eventHandler);
 }
 
 function eventHandler(event) {
-  var element = event.target.id !== "" ? event.target : event.target.parentNode;
+  var element = event.target.id !== '' ? event.target : event.target.parentNode;
   var course = element.id; // cancel if disabled
 
-  if (element.classList.contains("disabled")) return; // toggle selection
+  if (element.classList.contains('disabled')) return; // toggle selection
 
-  if (!element.classList.contains("selected")) {
-    element.classList.add("selected");
+  if (!element.classList.contains('selected')) {
+    element.classList.add('selected');
     selectedCourses.push(course);
   } else {
-    element.classList.remove("selected");
+    element.classList.remove('selected');
     selectedCourses.splice(selectedCourses.indexOf(course), 1);
   } // get further possibilities
 
 
-  var possibilities = findCoursePossibilties(selectedCourses);
-  console.log(possibilities);
+  var possibilities = findCoursePossibilties(selectedCourses); // disabled other items
+
+  courseContainerDIV.querySelectorAll('.course').forEach(function (el) {
+    if (!possibilities.includes(el.id) && !el.classList.contains('selected')) el.classList.add('disabled');else el.classList.remove('disabled');
+  });
 }
 
 function findCoursePossibilties(selectedCourses) {
-  // search for possibilities
-  var possibilities = _courses.courseOptions.filter(function (_ref) {
-    var _ref2 = _slicedToArray(_ref, 3),
-        coursesA = _ref2[0],
-        coursesB = _ref2[1],
-        coursesC = _ref2[2];
+  // convert given courses to categories
+  var selectedCategories = selectedCourses.map(function (course) {
+    return getCategory(course);
+  }); // search for possibilities
 
-    var foundMatches = [];
-    return selectedCourses.every(function (course) {});
+  var possibleCategoryCombinatinons = _courses.courseCombinations.map(function (courseCombination) {
+    // get categories of maped combi
+    var combinationCategory = courseCombination.map(function (combi) {
+      return getCategory(combi[0]);
+    }); // check if combi matches
+
+    var matched = selectedCategories.every(function (category) {
+      if (combinationCategory.includes(category)) {
+        combinationCategory.splice(combinationCategory.indexOf(category), 1);
+        return true;
+      }
+    });
+    if (matched) return combinationCategory.map(function (category) {
+      return _courses.categories[category];
+    }).flat();
   });
 
-  return possibilities;
+  return _toConsumableArray(new Set(possibleCategoryCombinatinons.flat().filter(function (n) {
+    return n;
+  })));
 }
-},{"./courses":"js/courses.js"}],"../../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+function getCategory(course) {
+  return Object.entries(_courses.categories).filter(function (_ref) {
+    var _ref2 = _slicedToArray(_ref, 2),
+        category = _ref2[0],
+        courses = _ref2[1];
+
+    return courses.includes(course);
+  })[0][0];
+}
+},{"./courses":"js/courses.js"}],"../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -231,7 +264,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57076" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59931" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -407,5 +440,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js","js/app.js"], null)
+},{}]},{},["../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js","js/app.js"], null)
 //# sourceMappingURL=/app.c3f9f951.js.map
