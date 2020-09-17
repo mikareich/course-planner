@@ -1,4 +1,4 @@
-import { categories, courseCombinations } from './courses'
+import { categories, courseCombinations } from './courses.js'
 
 const courseContainerDIV = document.querySelector('.course-container')
 let selectedCourses = []
