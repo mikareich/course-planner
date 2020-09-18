@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mikareich/course-planner/issues"
   },
-  "homepage": "https://github.com/mikareich/course-planner#readme"
+  "homepage": "https://github.com/mikareich/course-planner#readme",
+  "devDependencies": {
+    "rollup": "^2.27.1"
+  }
 }
