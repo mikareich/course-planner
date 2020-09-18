@@ -1,5 +1,4 @@
 import { categories, courseCombinations } from "./courses";
-import _ from "lodash";
 
 const courseContainerDIV = document.querySelector(".course-container");
 let selectedCourses = [];

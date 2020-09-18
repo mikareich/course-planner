@@ -5,6 +5,7 @@ import { terser } from "rollup-plugin-terser";
 
 export default {
   input: "./js/index.js",
+  watch: true,
   output: {
     file: "./dist/index.min.js",
     format: "iife",
