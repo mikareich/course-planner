@@ -1,5 +1,5 @@
 import { categories, courseCombinations } from './courses'
-import '../css/style.css'
+import '../css/style.scss'
 const courseContainerDIV = document.querySelector('.course-container')
 let selectedCourses = []
 
