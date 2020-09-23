@@ -4,22 +4,28 @@ const categories = {
   'Gesellschaftswissenschaftliches Fach': [
     'Geschichte',
     'Sozialkunde',
-    'Erdkunde',
+    'Erdkunde'
   ],
   Mathematik: ['Mathematik'],
   Naturwissenschaft: ['Biologie', 'Physik', 'Chemie'],
   Informatik: ['Informatik'],
   Religionslehre: ['Evangelische Religion', 'Katholische Religion'],
   Sport: ['Sport'],
-  'Künstlerisches Fach': ['Musik', 'Kunst'],
+  'Künstlerisches Fach': ['Musik', 'Kunst']
 }
 
 const generalCategories = {
-  Sprachen: ['Deutsch', 'Fremdsprache'],
-  Gesellschaftswissenschaften: ['Gesellschaftswissenschaftliches Fach'],
-  MINT: ['Mathematik', 'Naturwissenschaft', 'Informatik'],
-  Religionen: ['Religionslehre'],
-  'Andere...': ['Sport', 'Künstlerisches Fach'],
+  Sprachen: [categories.Deutsch, categories.Fremdsprache],
+  Gesellschaftswissenschaften: [
+    categories['Gesellschaftswissenschaftliches Fach']
+  ],
+  MINT: [
+    categories.Mathematik,
+    categories.Naturwissenschaft,
+    categories.Informatik
+  ],
+  Religionen: [categories.Religionslehre],
+  'Andere...': [categories.Sport, categories['Künstlerisches Fach']]
 }
 
 const courseCombinations = [
@@ -28,100 +34,100 @@ const courseCombinations = [
   [
     categories.Fremdsprache,
     categories.Deutsch,
-    categories['Gesellschaftswissenschaftliches Fach'],
+    categories['Gesellschaftswissenschaftliches Fach']
   ],
   [categories.Fremdsprache, categories.Fremdsprache, categories.Mathematik],
   [
     categories.Fremdsprache,
     categories.Fremdsprache,
-    categories.Naturwissenschaft,
+    categories.Naturwissenschaft
   ],
   [
     categories.Fremdsprache,
     categories.Fremdsprache,
-    categories['Gesellschaftswissenschaftliches Fach'],
+    categories['Gesellschaftswissenschaftliches Fach']
   ],
   [
     categories.Fremdsprache,
     categories.Mathematik,
-    categories.Naturwissenschaft,
+    categories.Naturwissenschaft
   ],
   [categories.Fremdsprache, categories.Mathematik, categories.Informatik],
   [
     categories.Fremdsprache,
     categories.Mathematik,
-    categories['Gesellschaftswissenschaftliches Fach'],
+    categories['Gesellschaftswissenschaftliches Fach']
   ],
   [
     categories.Fremdsprache,
     categories.Naturwissenschaft,
-    categories.Naturwissenschaft,
+    categories.Naturwissenschaft
   ],
   [
     categories.Fremdsprache,
     categories.Naturwissenschaft,
-    categories['Gesellschaftswissenschaftliches Fach'],
+    categories['Gesellschaftswissenschaftliches Fach']
   ],
   [
     categories.Fremdsprache,
     categories.Naturwissenschaft,
-    categories.Informatik,
+    categories.Informatik
   ],
   [categories.Mathematik, categories.Naturwissenschaft, categories.Deutsch],
   [
     categories.Mathematik,
     categories.Deutsch,
-    categories['Gesellschaftswissenschaftliches Fach'],
+    categories['Gesellschaftswissenschaftliches Fach']
   ],
   [
     categories.Mathematik,
     categories.Naturwissenschaft,
-    categories['Gesellschaftswissenschaftliches Fach'],
+    categories['Gesellschaftswissenschaftliches Fach']
   ],
   [
     categories.Naturwissenschaft,
     categories.Naturwissenschaft,
-    categories.Deutsch,
+    categories.Deutsch
   ],
   [categories.Mathematik, categories.Deutsch, categories.Informatik],
   [
     categories.Naturwissenschaft,
     categories.Deutsch,
-    categories['Gesellschaftswissenschaftliches Fach'],
+    categories['Gesellschaftswissenschaftliches Fach']
   ],
   [categories.Fremdsprache, categories.Mathematik, categories.Sport],
   [categories.Fremdsprache, categories.Mathematik, categories.Religionslehre],
   [
     categories.Fremdsprache,
     categories.Mathematik,
-    categories['Künstlerisches Fach'],
+    categories['Künstlerisches Fach']
   ],
   [categories.Naturwissenschaft, categories.Deutsch, categories.Informatik],
   [categories.Fremdsprache, categories.Naturwissenschaft, categories.Sport],
   [
     categories.Fremdsprache,
     categories.Naturwissenschaft,
-    categories.Religionslehre,
+    categories.Religionslehre
   ],
   [
     categories.Fremdsprache,
     categories.Naturwissenschaft,
-    categories['Künstlerisches Fach'],
+    categories['Künstlerisches Fach']
   ],
   [categories.Mathematik, categories.Deutsch, categories.Sport],
   [categories.Mathematik, categories.Deutsch, categories.Religionslehre],
   [
     categories.Mathematik,
     categories.Deutsch,
-    categories['Künstlerisches Fach'],
+    categories['Künstlerisches Fach']
   ],
   [categories.Naturwissenschaft, categories.Deutsch, categories.Sport],
   [categories.Naturwissenschaft, categories.Deutsch, categories.Religionslehre],
   [
     categories.Naturwissenschaft,
     categories.Deutsch,
-    categories['Künstlerisches Fach'],
-  ],
+    categories['Künstlerisches Fach']
+  ]
 ]
 
 export { categories, courseCombinations, generalCategories }

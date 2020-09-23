@@ -1,19 +1,50 @@
-import { categories, courseCombinations } from './courses'
+import { categories, courseCombinations, generalCategories } from './courses'
 import '../css/style.scss'
 
-const courseContainerDIV = document.querySelector('.course-container')
+const courseContainerDIV = document.querySelector('main')
 let selectedCourses = []
 
-// create cours dom elements
-// Object.values(categories).flat().forEach(createCourseElement)
+// add courses to dom
 
-function createCourseElement(course) {
+Object.entries(generalCategories).forEach(
+  ([generalCategory, correspondingCategories]) => {
+    // create general-category component
+    const generalCategoryElement = createElement({
+      className: 'category',
+      parentChild: courseContainerDIV
+    })
+    // add label
+    const label = createElement({
+      innerHTML: generalCategory,
+      className: 'label',
+      parentChild: generalCategoryElement
+    })
+    // add courses
+    const courseContainer = createElement({
+      className: 'courses',
+      parentChild: generalCategoryElement
+    })
+    correspondingCategories.flat().forEach((course) => {
+      const courseElement = createElement({
+        id: course,
+        className: 'course',
+        parentChild: courseContainer,
+        innerHTML: `<span class="course-name">${course}</span>`
+      })
+      courseElement.addEventListener('click', eventHandler)
+    })
+  }
+)
+
+function createElement(config) {
   const element = document.createElement('div')
-  element.className = 'course'
-  element.id = course
-  element.innerHTML = `<span class="course-name">${course}</span>`
-  courseContainerDIV.appendChild(element)
-  element.addEventListener('click', eventHandler)
+  if (config.id) element.id = config.id
+  if (config.className) element.className = config.className
+  if (config.innerHTML) element.innerHTML = config.innerHTML
+  console.log(config.parentChild)
+  config.parentChild.appendChild(element)
+
+  return element
 }
 
 function eventHandler(event) {
