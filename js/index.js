@@ -41,7 +41,6 @@ function createElement(config) {
   if (config.id) element.id = config.id
   if (config.className) element.className = config.className
   if (config.innerHTML) element.innerHTML = config.innerHTML
-  console.log(config.parentChild)
   config.parentChild.appendChild(element)
 
   return element
