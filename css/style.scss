@@ -21,10 +21,9 @@ body {
 }
 
 main {
-  width: clamp(300px, 80vw, 800px);
-  min-height: 100vh;
+  width: clamp(300px, 50vw, 800px);
   display: grid;
-  grid-template-rows: repeat(6, minmax(100px, auto));
+  grid-template-rows: repeat(6, auto);
   gap: 20px;
   padding-bottom: 20px;
   .banner {
