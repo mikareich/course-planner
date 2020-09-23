@@ -4,7 +4,7 @@ const courseContainerDIV = document.querySelector('.course-container')
 let selectedCourses = []
 
 // create cours dom elements
-Object.values(categories).flat().forEach(createCourseElement)
+// Object.values(categories).flat().forEach(createCourseElement)
 
 function createCourseElement(course) {
   const element = document.createElement('div')
