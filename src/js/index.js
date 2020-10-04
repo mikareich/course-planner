@@ -57,9 +57,7 @@ function createElement(config) {
   return element
 }
 
-function eventHandler(event) {
-  const element =
-    event.target.id !== '' ? event.target : event.target.parentNode
+function eventHandler(element) {
   const course = element.id
 
   // cancel if disabled
