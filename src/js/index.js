@@ -74,7 +74,15 @@ function eventHandler(element) {
 
   // get further possibilities
   const possibilities = findCoursePossibilties(selectedCourses)
-  console.log(possibilities)
+  // disable or enable courses based on futher possibilities
+  document.querySelectorAll('.course').forEach((element) => {
+    const elementCourse = element.id
+    if (possibilities.includes(elementCourse)) {
+      element.classList.remove('disabled')
+    } else {
+      element.classList.add('disabled')
+    }
+  })
 }
 /**
  * Search for futher possible courses
@@ -103,16 +111,11 @@ function findCoursePossibilties(selectedCourses) {
     includesSelectedCourses &&
       possibleFurtherCourses.push(...combination.flat())
   })
-
-  // remove items from selectedCourses
-  possibleFurtherCourses = possibleFurtherCourses.filter(
-    (course) => !selectedCourses.includes(course)
-  )
   // remove duplicates
-  possibleFurtherCourses = [...new Set(possibleFurtherCourses)]
+  possibleFurtherCourses = [
+    ...new Set(possibleFurtherCourses),
+    ...selectedCourses
+  ]
 
   return possibleFurtherCourses
 }
-
-console.log(findCoursePossibilties(['Mathematik', 'Physik']))
-console.log(findCoursePossibilties(['Mathematik', 'Physik']))
