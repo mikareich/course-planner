@@ -74,12 +74,7 @@ function eventHandler(element) {
 
   // get further possibilities
   const possibilities = findCoursePossibilties(selectedCourses)
-  // disabled other items
-  courseContainerDIV.querySelectorAll('.course').forEach((el) => {
-    if (!possibilities.includes(el.id) && !el.classList.contains('selected'))
-      el.classList.add('disabled')
-    else el.classList.remove('disabled')
-  })
+  console.log(possibilities)
 }
 /**
  * Search for futher possible courses
@@ -92,6 +87,8 @@ function findCoursePossibilties(selectedCourses) {
   let possibleFurtherCourses = []
 
   courseCombinations.forEach((combination) => {
+    // delete refference
+    combination = [...combination]
     // check if all items of selectedCourses are included and throw out the selected course-categories
     const includesSelectedCourses = selectedCourses.every((course) => {
       return combination.some((combinationCategory, index) => {
@@ -116,3 +113,6 @@ function findCoursePossibilties(selectedCourses) {
 
   return possibleFurtherCourses
 }
+
+console.log(findCoursePossibilties(['Mathematik', 'Physik']))
+console.log(findCoursePossibilties(['Mathematik', 'Physik']))
