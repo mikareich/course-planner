@@ -32,7 +32,7 @@ Object.entries(subjectAreas).forEach(
         innerHTML: `<span class="course-name">${course}</span>`,
         parentChild: courseContainer
       })
-      courseElement.addEventListener('click', eventHandler)
+      courseElement.onclick = () => eventHandler(courseElement)
     })
   }
 )
@@ -43,7 +43,6 @@ Object.entries(subjectAreas).forEach(
  * @param {HTMLElement} config.parentChild - HTML-Container of element
  * @param {string} [config.id] - Id of element
  * @param {string} [config.className] - Css-Class of element
- * @param {object} config.parentChild - HTML-Container of element
  * @param {string} [config.innerHTML] - Inner HTML of element
  *
  * @returns {HTMLElement} Created HTML-Element
