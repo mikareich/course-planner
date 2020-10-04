@@ -83,7 +83,12 @@ function eventHandler(event) {
     else el.classList.remove('disabled')
   })
 }
-
+/**
+ * Search for futher possible courses
+ * @param {string[]} selectedCourses Selected courses
+ *
+ * @returns {string[]} Possible courses
+ */
 function findCoursePossibilties(selectedCourses) {
   // convert given courses to categories
   const selectedCategories = selectedCourses.map((course) =>
