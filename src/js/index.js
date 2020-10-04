@@ -1,4 +1,4 @@
-import { categories, courseCombinations, generalCategories } from './courses'
+import { categories, courseCombinations, subjectAreas } from './courses'
 import '../css/style.scss'
 
 const courseContainerDIV = document.querySelector('main')
@@ -6,7 +6,7 @@ let selectedCourses = []
 
 // add courses to dom
 
-Object.entries(generalCategories).forEach(
+Object.entries(subjectAreas).forEach(
   ([generalCategory, correspondingCategories]) => {
     // create general-category component
     const generalCategoryElement = createElement({

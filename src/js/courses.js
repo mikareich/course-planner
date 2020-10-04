@@ -1,3 +1,6 @@
+/**
+ * Courses, sorted by there category
+ */
 const categories = {
   Deutsch: ['Deutsch'],
   Fremdsprache: ['Französisch', 'Englisch', 'Spanisch', 'Latein'],
@@ -29,7 +32,9 @@ const subjectAreas = {
   Religionen: [categories.Religionslehre],
   'Andere...': [categories.Sport, categories['Künstlerisches Fach']]
 }
-
+/**
+ * All course-combinations
+ */
 const courseCombinations = [
   [categories.Fremdsprache, categories.Mathematik, categories.Deutsch],
   [categories.Fremdsprache, categories.Naturwissenschaft, categories.Deutsch],
@@ -132,4 +137,4 @@ const courseCombinations = [
   ]
 ]
 
-export { categories, courseCombinations, generalCategories }
+export { categories, courseCombinations, subjectAreas }
