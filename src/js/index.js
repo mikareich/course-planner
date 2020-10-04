@@ -39,13 +39,14 @@ Object.entries(subjectAreas).forEach(
 /**
  *  Creates HTML-Element with given parameters
  *
- * @param {Object} config - Configuration of Element
+ * @param {object} config - Configuration of Element
+ * @param {HTMLElement} config.parentChild - HTML-Container of element
  * @param {string} [config.id] - Id of element
  * @param {string} [config.className] - Css-Class of element
  * @param {object} config.parentChild - HTML-Container of element
  * @param {string} [config.innerHTML] - Inner HTML of element
  *
- * @returns {object} Created HTML-Element
+ * @returns {HTMLElement} Created HTML-Element
  */
 function createElement(config) {
   const element = document.createElement('div')
