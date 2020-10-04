@@ -89,34 +89,30 @@ function eventHandler(element) {
  */
 function findCoursePossibilties(selectedCourses) {
   // convert given courses to categories
-  const selectedCategories = selectedCourses.map((course) =>
-    getCategory(course)
-  )
-  // search for possibilities
-  const possibleCategoryCombinatinons = courseCombinations.map(
-    (courseCombination) => {
-      // get categories of maped combi
-      const combinationCategory = courseCombination.map((combi) =>
-        getCategory(combi[0])
-      )
-      // check if combi matches
-      const matched = selectedCategories.every((category) => {
-        if (combinationCategory.includes(category)) {
-          combinationCategory.splice(combinationCategory.indexOf(category), 1)
+  let possibleFurtherCourses = []
+
+  courseCombinations.forEach((combination) => {
+    // check if all items of selectedCourses are included and throw out the selected course-categories
+    const includesSelectedCourses = selectedCourses.every((course) => {
+      return combination.some((combinationCategory, index) => {
+        // check if course is included in one category and then delete category to prevent double matching same category
+        if (combinationCategory.includes(course)) {
+          combination.splice(index, 1)
           return true
         }
       })
-      if (matched)
-        return combinationCategory
-          .map((category) => categories[category])
-          .flat()
-    }
-  )
-  return [...new Set(possibleCategoryCombinatinons.flat().filter((n) => n))]
-}
+    })
+    // add courses if combination matches
+    includesSelectedCourses &&
+      possibleFurtherCourses.push(...combination.flat())
+  })
 
-function getCategory(course) {
-  return Object.entries(categories).filter(([category, courses]) =>
-    courses.includes(course)
-  )[0][0]
+  // remove items from selectedCourses
+  possibleFurtherCourses = possibleFurtherCourses.filter(
+    (course) => !selectedCourses.includes(course)
+  )
+  // remove duplicates
+  possibleFurtherCourses = [...new Set(possibleFurtherCourses)]
+
+  return possibleFurtherCourses
 }
