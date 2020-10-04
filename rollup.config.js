@@ -8,6 +8,8 @@ import livereload from 'rollup-plugin-livereload'
 
 const distributenFolder = 'public'
 
+const { BUILD } = process.env
+
 export default {
   input: './src/js/index.js',
   watch: true,
@@ -24,7 +26,7 @@ export default {
       output: `./${distributenFolder}/bundle.css`,
       outputStyle: 'compressed'
     }),
-    serve(distributenFolder),
-    livereload(distributenFolder)
+    BUILD === 'development' && serve(distributenFolder),
+    BUILD === 'development' && livereload(distributenFolder)
   ]
 }
