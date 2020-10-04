@@ -13,8 +13,10 @@ const categories = {
   Sport: ['Sport'],
   'Künstlerisches Fach': ['Musik', 'Kunst']
 }
-
-const generalCategories = {
+/**
+ * The different subject areas of the courses
+ */
+const subjectAreas = {
   Sprachen: [categories.Deutsch, categories.Fremdsprache],
   Gesellschaftswissenschaften: [
     categories['Gesellschaftswissenschaftliches Fach']
