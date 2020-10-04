@@ -14,28 +14,39 @@ Object.entries(generalCategories).forEach(
       parentChild: courseContainerDIV
     })
     // add label
-    const label = createElement({
+    createElement({
       innerHTML: generalCategory,
       className: 'label',
       parentChild: generalCategoryElement
     })
-    // add courses
+    // add course-container
     const courseContainer = createElement({
       className: 'courses',
       parentChild: generalCategoryElement
     })
+    // add courses to container
     correspondingCategories.flat().forEach((course) => {
       const courseElement = createElement({
         id: course,
         className: 'course',
-        parentChild: courseContainer,
-        innerHTML: `<span class="course-name">${course}</span>`
+        innerHTML: `<span class="course-name">${course}</span>`,
+        parentChild: courseContainer
       })
       courseElement.addEventListener('click', eventHandler)
     })
   }
 )
-
+/**
+ *  Creates HTML-Element with given parameters
+ *
+ * @param {Object} config - Configuration of Element
+ * @param {string} [config.id] - Id of element
+ * @param {string} [config.className] - Css-Class of element
+ * @param {object} config.parentChild - HTML-Container of element
+ * @param {string} [config.innerHTML] - Inner HTML of element
+ *
+ * @returns {object} Created HTML-Element
+ */
 function createElement(config) {
   const element = document.createElement('div')
   if (config.id) element.id = config.id

@@ -9,7 +9,7 @@ import livereload from 'rollup-plugin-livereload'
 const distributenFolder = 'public'
 
 export default {
-  input: './js/index.js',
+  input: './src/js/index.js',
   watch: true,
   output: {
     file: `./${distributenFolder}/bundle.js`,
