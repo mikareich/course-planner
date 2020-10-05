@@ -32,7 +32,7 @@ Object.entries(subjectAreas).forEach(
         innerHTML: `<span class="course-name">${course}</span>`,
         parentChild: courseContainer
       })
-      courseElement.onclick = () => eventHandler(courseElement)
+      courseElement.onclick = () => selectElement(courseElement)
     })
   }
 )
@@ -57,7 +57,11 @@ function createElement(config) {
   return element
 }
 
-function eventHandler(element) {
+/**
+ *  Toggle selection and rerender view
+ * @param {HTMLElement} element Clicked course element
+ */
+function selectElement(element) {
   const course = element.id
 
   // cancel if disabled
