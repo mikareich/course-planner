@@ -7,22 +7,22 @@ let selectedCourses = []
 // add courses to dom
 
 Object.entries(subjectAreas).forEach(
-  ([generalCategory, correspondingCategories]) => {
+  ([subjectArea, correspondingCategories]) => {
     // create general-category component
-    const generalCategoryElement = createElement({
+    const subjectAreaElement = createElement({
       className: 'category',
       parentChild: courseContainerDIV
     })
     // add label
     createElement({
-      innerHTML: generalCategory,
+      innerHTML: subjectArea,
       className: 'label',
-      parentChild: generalCategoryElement
+      parentChild: subjectAreaElement
     })
     // add course-container
     const courseContainer = createElement({
       className: 'courses',
-      parentChild: generalCategoryElement
+      parentChild: subjectAreaElement
     })
     // add courses to container
     correspondingCategories.flat().forEach((course) => {
