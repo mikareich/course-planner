@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "rollup-plugin-serve": "^1.0.4",
+    "rollup-plugin-sourcemaps": "^0.6.2",
     "rollup-plugin-workbox": "^5.2.1"
   }
 }
