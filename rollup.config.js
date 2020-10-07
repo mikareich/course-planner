@@ -5,16 +5,17 @@ import { terser } from 'rollup-plugin-terser'
 import scss from 'rollup-plugin-scss'
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
+import { generateSW, injectManifest } from 'rollup-plugin-workbox'
 
 const distributenFolder = 'public'
 
 const { BUILD } = process.env
 
 export default {
-  input: './src/js/index.js',
+  input: 'src/js/index.js',
   watch: true,
   output: {
-    file: `./${distributenFolder}/bundle.js`,
+    file: `${distributenFolder}/bundle.js`,
     format: 'iife'
   },
   plugins: [
@@ -25,6 +26,10 @@ export default {
     scss({
       output: `./${distributenFolder}/bundle.css`,
       outputStyle: 'compressed'
+    }),
+    generateSW({
+      swDest: 'public/sw.js',
+      globDirectory: 'public'
     }),
     BUILD === 'development' && serve(distributenFolder),
     BUILD === 'development' && livereload(distributenFolder)
