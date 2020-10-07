@@ -2,7 +2,7 @@
   "name": "Course Planner",
   "short_name": "Course Planner",
   "theme_color": "#8fbcbb",
-  "background_color": "#2196f3",
+  "background_color": "#eceff4",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
