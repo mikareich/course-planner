@@ -1,4 +1,4 @@
-import { categories, courseCombinations, subjectAreas } from './courses'
+import { courseCombinations, subjectAreas } from './courses'
 import '../css/style.scss'
 
 const courseContainerDIV = document.querySelector('main')
@@ -95,7 +95,7 @@ function findCoursePossibilties(selectedCourses) {
   let possibleFurtherCourses = []
 
   courseCombinations.forEach((combination) => {
-    // delete refference
+    // make combination as private variable (delete ref.)
     combination = [...combination]
     // check if all items of selectedCourses are included and throw out the selected course-categories
     const includesSelectedCourses = selectedCourses.every((course) => {
