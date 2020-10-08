@@ -5,7 +5,8 @@ import { terser } from 'rollup-plugin-terser'
 import scss from 'rollup-plugin-scss'
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
-import { generateSW, injectManifest } from 'rollup-plugin-workbox'
+import { generateSW } from 'rollup-plugin-workbox'
+import sourcemaps from 'rollup-plugin-sourcemaps'
 
 const distributenFolder = 'public'
 
@@ -16,7 +17,8 @@ export default {
   watch: true,
   output: {
     file: `${distributenFolder}/bundle.js`,
-    format: 'iife'
+    format: 'iife',
+    sourcemap: true
   },
   plugins: [
     babel({ exclude: 'node_modules/*' }),
@@ -31,6 +33,7 @@ export default {
       swDest: 'public/sw.js',
       globDirectory: 'public'
     }),
+    sourcemaps(),
     BUILD === 'development' && serve(distributenFolder),
     BUILD === 'development' && livereload(distributenFolder)
   ]
