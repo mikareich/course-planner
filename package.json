@@ -42,5 +42,8 @@
     "webpack": "^4.44.2",
     "webpack-cli": "^4.1.0",
     "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "mini-css-extract-plugin": "^1.2.1"
   }
 }

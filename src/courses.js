@@ -137,4 +137,4 @@ const courseCombinations = [
   ]
 ]
 
-export { categories, courseCombinations, subjectAreas }
+export { courseCombinations, subjectAreas }
