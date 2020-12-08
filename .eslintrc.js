@@ -1,14 +1,19 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
   },
-  extends: ['airbnb-base', 'prettier'],
+  extends: ["plugin:react/recommended", "airbnb", "prettier"],
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
     ecmaVersion: 12,
-    sourceType: 'module'
+    sourceType: "module",
   },
-  rules: {},
-  parser: '@babel/eslint-parser',
-  ignorePatterns: 'dist'
-}
+  plugins: ["react"],
+  rules: {
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+  },
+};
