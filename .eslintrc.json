@@ -5,7 +5,8 @@
     "react/prop-types": 0,
     "react-hooks/rules-of-hooks": "error",
     "no-console": "warn",
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "no-unused-vars": "warn"
   },
   "env": {
     "es6": true,

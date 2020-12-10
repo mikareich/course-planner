@@ -1,4 +1,28 @@
 /**
+ * All courses
+ */
+const allCourses = [
+  "Deutsch",
+  "Französisch",
+  "Englisch",
+  "Spanisch",
+  "Latein",
+  "Geschichte",
+  "Sozialkunde",
+  "Erdkunde",
+  "Mathematik",
+  "Biologie",
+  "Physik",
+  "Chemie",
+  "Informatik",
+  "Evangelische Religion",
+  "Katholische Religion",
+  "Sport",
+  "Musik",
+  "Kunst",
+];
+
+/**
  * Courses, sorted by there category
  */
 const categories = {
@@ -137,4 +161,4 @@ const courseCombinations = [
   ],
 ];
 
-export { courseCombinations, subjectAreas };
+export { courseCombinations, subjectAreas, allCourses };
