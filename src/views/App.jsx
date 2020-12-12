@@ -1,7 +1,7 @@
 import React from "react";
-import { CourseProvider } from "./CourseContext";
-import CourseItem from "./CourseItem";
-import { allCourses } from "./courses";
+import { CourseProvider } from "../components/CourseContext";
+import CourseItem from "../components/CourseItem";
+import { allCourses } from "../modules/courses";
 
 function App() {
   return (

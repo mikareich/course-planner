@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
-import { allCourses } from "./courses";
-import getPossibleCourses from "./getPossibleCourses";
+import { allCourses } from "../modules/courses";
+import getPossibleCourses from "../modules/getPossibleCourses";
 
 const courseContext = createContext();
 
