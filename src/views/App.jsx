@@ -8,19 +8,25 @@ function App() {
   return (
     <div className="App">
       <CourseProvider>
-        {
-          // display categories with dedicated courses
-          Object.entries(subjectAreas).map(([subject, courses]) => (
-            <Category label={subject} key={subject}>
-              {
-                // display courses
-                courses.flat().map((courseName) => (
-                  <CourseItem name={courseName} key={courseName} />
-                ))
-              }
-            </Category>
-          ))
-        }
+        <header className="header" />
+
+        <main className="main">
+          {
+            // display categories with dedicated courses
+            Object.entries(subjectAreas).map(([subject, courses]) => (
+              <Category label={subject} key={subject}>
+                {
+                  // display courses
+                  courses.flat().map((courseName) => (
+                    <CourseItem name={courseName} key={courseName} />
+                  ))
+                }
+              </Category>
+            ))
+          }
+        </main>
+
+        <footer className="footer" />
       </CourseProvider>
     </div>
   );
