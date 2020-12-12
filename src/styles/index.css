@@ -42,3 +42,13 @@ body {
   text-overflow: ellipsis;
   font-size: 13px;
 }
+.category .label {
+  color: var(--text-light-1);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.category .courses {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, 120px);
+}

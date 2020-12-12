@@ -3,8 +3,8 @@ import React from "react";
 function Category({ label, children }) {
   return (
     <div className="category">
-      <span className="label">{label}</span>
-      {children}
+      <p className="label">{label}</p>
+      <div className="courses">{children}</div>
     </div>
   );
 }

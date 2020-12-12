@@ -31,7 +31,7 @@ function CourseItem({ name }) {
       type="button"
       onClick={toggleCourse}
     >
-      {name}
+      <span className="name">{name}</span>
     </button>
   );
 }

@@ -14,7 +14,7 @@ function App() {
             <Category label={subject} key={subject}>
               {
                 // display courses
-                courses.map((courseName) => (
+                courses.flat().map((courseName) => (
                   <CourseItem name={courseName} key={courseName} />
                 ))
               }
