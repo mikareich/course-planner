@@ -32,4 +32,13 @@ body {
   justify-content: center;
   background-color: var(--bg-accent);
   border: none;
+  padding: 10px;
+}
+.course-item .name {
+  font-family: "Rubik", sans-serif;
+  color: var(--text);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 13px;
 }
