@@ -26,7 +26,8 @@ function CourseItem({ name }) {
 
   return (
     <button
-      className={`${selected && "selected"} ${disabled && "disabled"}`}
+      className={`course-item 
+      ${selected && "selected"} ${disabled && "disabled"}`}
       type="button"
       onClick={toggleCourse}
     >
