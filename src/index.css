@@ -9,10 +9,15 @@
   --text-light-2: #434c5e;
 }
 
-.disabled {
-  text-decoration: line-through;
+* {
+  box-sizing: border-box;
 }
 
-.selected {
-  text-decoration: underline;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
 }
