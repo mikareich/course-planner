@@ -54,6 +54,8 @@ body {
   background-color: var(--bg-accent);
   border: none;
   padding: 10px;
+  transition: 200ms;
+  outline: none;
 }
 .course-item .name {
   font-family: "Rubik", sans-serif;
@@ -62,6 +64,12 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
   font-size: 13px;
+}
+.course-item.selected {
+  background-color: var(--primary);
+}
+.course-item.disabled {
+  opacity: 0.5;
 }
 .category .label {
   color: var(--text-light-1);
