@@ -13,11 +13,27 @@ function CourseProvider({ children }) {
   }
 
   function unselectCourse(name) {
-    setSelectedCourses((courses) => courses.splice(courses.indexOf(name), 1));
+    /* setSelectedCourses((courses) => {
+      const indexCourse = courses.indexOf(name);
+      // remove item from courses
+      courses.splice(indexCourse, 1);
+      console.log(courses);
+
+      return courses;
+    }); */
+    setSelectedCourses((courses) => {
+      const indexCourse = courses.indexOf(name);
+      // remove item from courses
+      courses.splice(indexCourse, 1);
+
+      return [...courses];
+    });
+    console.log("unselect", selectedCourses);
   }
 
   useEffect(() => {
     const possibleCourses = getPossibleCourses(selectedCourses);
+    console.log("useEffect", selectedCourses);
     setDisabledCourses(
       allCourses.filter((course) => !possibleCourses.includes(course))
     );
