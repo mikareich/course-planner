@@ -13,7 +13,13 @@ function CourseProvider({ children }) {
   }
 
   function unselectCourse(name) {
-    setSelectedCourses((courses) => courses.splice(courses.indexOf(name), 1));
+    setSelectedCourses((courses) => {
+      const indexCourse = courses.indexOf(name);
+      // remove item from courses
+      courses.splice(indexCourse, 1);
+
+      return [...courses]; // remove relation to argument
+    });
   }
 
   useEffect(() => {
