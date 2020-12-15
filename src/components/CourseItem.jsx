@@ -15,6 +15,7 @@ function CourseItem({ name }) {
 
   // toggle selection
   const toggleCourse = () => {
+    if (disabled) return;
     setSelected(!selected);
 
     if (selected) {
