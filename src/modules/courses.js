@@ -48,6 +48,18 @@ const categories = {
     Leistungskurs: ["Bildende Kunst", "Musik"],
   },
   Philosophie: ["Philosophie"],
+  get "Verpflichtende Kurse 1"() {
+    return [this.Fremdsprache, this.Naturwissenschaft, this.Informatik];
+  },
+  get "Verpflichtende Kurse 2"() {
+    return [
+      this.Fremdsprache,
+      this.Naturwissenschaft,
+      this.Informatik,
+      this["Künstlerisches Fach"],
+      this.Philosophie,
+    ];
+  },
 };
 /**
  * The different subject areas of the courses
@@ -80,105 +92,21 @@ const subjectAreas = {
  * All course-combinations
  */
 const courseCombinations = [
-  [categories.Fremdsprache, categories.Mathematik, categories.Deutsch],
-  [categories.Fremdsprache, categories.Naturwissenschaft, categories.Deutsch],
-  [
-    categories.Fremdsprache,
-    categories.Deutsch,
-    categories["Gesellschaftswissenschaftliches Fach"],
-  ],
-  [categories.Fremdsprache, categories.Fremdsprache, categories.Mathematik],
-  [
-    categories.Fremdsprache,
-    categories.Fremdsprache,
-    categories.Naturwissenschaft,
-  ],
-  [
-    categories.Fremdsprache,
-    categories.Fremdsprache,
-    categories["Gesellschaftswissenschaftliches Fach"],
-  ],
-  [
-    categories.Fremdsprache,
-    categories.Mathematik,
-    categories.Naturwissenschaft,
-  ],
-  [categories.Fremdsprache, categories.Mathematik, categories.Informatik],
-  [
-    categories.Fremdsprache,
-    categories.Mathematik,
-    categories["Gesellschaftswissenschaftliches Fach"],
-  ],
-  [
-    categories.Fremdsprache,
-    categories.Naturwissenschaft,
-    categories.Naturwissenschaft,
-  ],
-  [
-    categories.Fremdsprache,
-    categories.Naturwissenschaft,
-    categories["Gesellschaftswissenschaftliches Fach"],
-  ],
-  [
-    categories.Fremdsprache,
-    categories.Naturwissenschaft,
-    categories.Informatik,
-  ],
-  [categories.Mathematik, categories.Naturwissenschaft, categories.Deutsch],
-  [
-    categories.Mathematik,
-    categories.Deutsch,
-    categories["Gesellschaftswissenschaftliches Fach"],
-  ],
-  [
-    categories.Mathematik,
-    categories.Naturwissenschaft,
-    categories["Gesellschaftswissenschaftliches Fach"],
-  ],
-  [
-    categories.Naturwissenschaft,
-    categories.Naturwissenschaft,
-    categories.Deutsch,
-  ],
-  [categories.Mathematik, categories.Deutsch, categories.Informatik],
-  [
-    categories.Naturwissenschaft,
-    categories.Deutsch,
-    categories["Gesellschaftswissenschaftliches Fach"],
-  ],
-  [categories.Fremdsprache, categories.Mathematik, categories.Sport],
-  [categories.Fremdsprache, categories.Mathematik, categories.Religionslehre],
-  [
-    categories.Fremdsprache,
-    categories.Mathematik,
-    categories["Künstlerisches Fach"],
-  ],
-  [categories.Naturwissenschaft, categories.Deutsch, categories.Informatik],
-  [categories.Fremdsprache, categories.Naturwissenschaft, categories.Sport],
-  [
-    categories.Fremdsprache,
-    categories.Naturwissenschaft,
-    categories.Religionslehre,
-  ],
-  [
-    categories.Fremdsprache,
-    categories.Naturwissenschaft,
-    categories["Künstlerisches Fach"],
-  ],
-  [categories.Mathematik, categories.Deutsch, categories.Sport],
-  [categories.Mathematik, categories.Deutsch, categories.Religionslehre],
-  [
-    categories.Mathematik,
-    categories.Deutsch,
-    categories["Künstlerisches Fach"],
-  ],
-  [categories.Naturwissenschaft, categories.Deutsch, categories.Sport],
-  [categories.Naturwissenschaft, categories.Deutsch, categories.Religionslehre],
-  [
-    categories.Naturwissenschaft,
-    categories.Deutsch,
-    categories["Künstlerisches Fach"],
-  ],
+  {
+    id: 0,
+    leistungskurse: [
+      categories.Fremdsprache,
+      categories.Mathematik,
+      categories.Deutsch,
+    ],
+    grundkurse: [
+      categories["Gesellschaftswissenschaftliches Fach"].Grundkurs,
+      categories.Naturwissenschaft,
+      categories.Religionslehre.Grundkurs,
+      categories.Sport,
+      [categories["Verpflichtende Kurse 1"]],
+    ],
+  },
 ];
 
 export { courseCombinations, subjectAreas, allCourses };
