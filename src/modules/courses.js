@@ -47,6 +47,7 @@ const categories = {
     Grundkurs: ["Bildende Kunst", "Musik", "Darstellendes Spiel"],
     Leistungskurs: ["Bildende Kunst", "Musik"],
   },
+  Philosophie: ["Philosophie"],
 };
 /**
  * The different subject areas of the courses
