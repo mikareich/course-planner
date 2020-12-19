@@ -10,6 +10,7 @@ const allCourses = [
   "Geschichte",
   "Sozialkunde",
   "Erdkunde",
+  "Sozialkunde/ Erdkunde",
   "Mathematik",
   "Biologie",
   "Physik",
@@ -17,9 +18,11 @@ const allCourses = [
   "Informatik",
   "Evangelische Religion",
   "Katholische Religion",
+  "Ethik",
+  "Philosophie",
   "Sport",
   "Musik",
-  "Kunst",
+  "Bildende Kunst",
 ];
 
 /**
