@@ -53,16 +53,27 @@ const categories = {
  */
 const subjectAreas = {
   Sprachen: [categories.Deutsch, categories.Fremdsprache],
-  Gesellschaftswissenschaften: [
-    categories["Gesellschaftswissenschaftliches Fach"],
-  ],
+  Gesellschaftswissenschaften: {
+    Grundkurs: categories["Gesellschaftswissenschaftliches Fach"].Grundkurs,
+    Leistungskurs:
+      categories["Gesellschaftswissenschaftliches Fach"].Leistungskurs,
+  },
   MINT: [
     categories.Mathematik,
     categories.Naturwissenschaft,
     categories.Informatik,
   ],
-  Religionen: [categories.Religionslehre],
-  "Andere...": [categories.Sport, categories["Künstlerisches Fach"]],
+  Religionen: {
+    Grundkurs: categories.Religionslehre.Grundkurs,
+    Leistungskurs: categories.Religionslehre.Leistungskurs,
+  },
+  "Andere...": {
+    Grundkurs: [categories.Sport, categories["Künstlerisches Fach"].Grundkurs],
+    Leistungskurs: [
+      categories.Sport,
+      categories["Künstlerisches Fach"].Leistungskurs,
+    ],
+  },
 };
 /**
  * All course-combinations
