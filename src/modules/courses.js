@@ -31,17 +31,22 @@ const allCourses = [
 const categories = {
   Deutsch: ["Deutsch"],
   Fremdsprache: ["Französisch", "Englisch", "Spanisch", "Latein"],
-  "Gesellschaftswissenschaftliches Fach": [
-    "Geschichte",
-    "Sozialkunde",
-    "Erdkunde",
-  ],
+  "Gesellschaftswissenschaftliches Fach": {
+    Grundkurs: ["Geschichte", "Sozialkunde/ Erdkunde"],
+    Leistungskurs: ["Geschichte", "Sozialkunde", "Erdkunde"],
+  },
   Mathematik: ["Mathematik"],
   Naturwissenschaft: ["Biologie", "Physik", "Chemie"],
   Informatik: ["Informatik"],
-  Religionslehre: ["Evangelische Religion", "Katholische Religion"],
+  Religionslehre: {
+    Grundkurs: ["Evangelische Religion", "Katholische Religion", "Ethik"],
+    Leistungskurs: ["Evangelische Religion", "Katholische Religion"],
+  },
   Sport: ["Sport"],
-  "Künstlerisches Fach": ["Musik", "Kunst"],
+  "Künstlerisches Fach": {
+    Grundkurs: ["Bildende Kunst", "Musik", "Darstellendes Spiel"],
+    Leistungskurs: ["Bildende Kunst", "Musik"],
+  },
 };
 /**
  * The different subject areas of the courses
