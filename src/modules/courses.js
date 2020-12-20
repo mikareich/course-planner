@@ -283,6 +283,76 @@ const courseCombinations = [
     ],
     pflichtstunden: 32,
   },
+  {
+    id: 11,
+    leistungskurse: [
+      categories.Fremdsprache,
+      categories.Naturwissenschaft,
+      categories.Informatik,
+    ],
+    grundkurse: [
+      categories.Deutsch,
+      categories["Gesellschaftswissenschaftliches Fach"].Grundkurs,
+      categories.Mathematik,
+      categories.Religionslehre.Grundkurs,
+      categories.Sport,
+      categories["Verpflichtende Kurse 2"],
+    ],
+    pflichtstunden: 32,
+  },
+  {
+    id: 12,
+    leistungskurse: [
+      categories.Mathematik,
+      categories.Naturwissenschaft,
+      categories.Deutsch,
+    ],
+    grundkurse: [
+      categories.Fremdsprache,
+      categories["Gesellschaftswissenschaftliches Fach"].Grundkurs,
+      categories.Religionslehre.Grundkurs,
+      categories.Sport,
+      categories["Verpflichtende Kurse 1"],
+      categories["Verpflichtende Kurse 2"],
+    ],
+    pflichtstunden: 32,
+  },
+  {
+    id: 13,
+    leistungskurse: [
+      categories.Mathematik,
+      categories.Deutsch,
+      categories["Gesellschaftswissenschaftliches Fach"],
+    ],
+    grundkurse: [
+      categories.Fremdsprache,
+      categories["Gesellschaftswissenschaftliches Fach"].Grundkurs,
+      categories.Naturwissenschaft,
+      categories.Religionslehre.Grundkurs,
+      categories.Sport,
+      categories["Verpflichtende Kurse 1"],
+      categories["Verpflichtende Kurse 2"],
+    ],
+    pflichtstunden: 32,
+  },
+  {
+    id: 14,
+    leistungskurse: [
+      categories.Mathematik,
+      categories.Naturwissenschaft,
+      categories["Gesellschaftswissenschaftliches Fach"],
+    ],
+    grundkurse: [
+      categories.Deutsch,
+      categories.Fremdsprache,
+      categories["Gesellschaftswissenschaftliches Fach"].Grundkurs,
+      categories.Religionslehre.Grundkurs,
+      categories.Sport,
+      categories["Verpflichtende Kurse 1"],
+      categories["Verpflichtende Kurse 2"],
+    ],
+    pflichtstunden: 32,
+  },
 ];
 
 export { courseCombinations, subjectAreas, allCourses };
