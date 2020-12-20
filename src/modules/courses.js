@@ -353,6 +353,143 @@ const courseCombinations = [
     ],
     pflichtstunden: 32,
   },
+  {
+    id: 15,
+    leistungskurse: [
+      categories.Naturwissenschaft,
+      categories.Naturwissenschaft,
+      categories.Deutsch,
+    ],
+    grundkurse: [
+      categories.Fremdsprache,
+      categories["Gesellschaftswissenschaftliches Fach"].Grundkurs,
+      categories.Mathematik,
+      categories.Religionslehre.Grundkurs,
+      categories.Sport,
+      categories["Verpflichtende Kurse 2"],
+    ],
+    pflichtstunden: 32,
+  },
+  {
+    id: 16,
+    leistungskurse: [
+      categories.Mathematik,
+      categories.Deutsch,
+      categories.Informatik,
+    ],
+    grundkurse: [
+      categories.Fremdsprache,
+      categories["Gesellschaftswissenschaftliches Fach"].Grundkurs,
+      categories.Naturwissenschaft,
+      categories.Religionslehre.Grundkurs,
+      categories.Sport,
+      categories["Verpflichtende Kurse 2"],
+    ],
+    pflichtstunden: 32,
+  },
+  {
+    id: 17,
+    leistungskurse: [
+      categories.Naturwissenschaft,
+      categories.Deutsch,
+      categories["Gesellschaftswissenschaftliches Fach"],
+    ],
+    grundkurse: [
+      categories.Fremdsprache,
+      categories["Gesellschaftswissenschaftliches Fach"].Grundkurs,
+      categories.Mathematik,
+      categories.Religionslehre.Grundkurs,
+      categories.Sport,
+      categories["Verpflichtende Kurse 1"],
+      categories["Verpflichtende Kurse 2"],
+    ],
+    pflichtstunden: 32,
+  },
+  {
+    id: 18,
+    leistungskurse: [
+      categories.Fremdsprache,
+      categories.Mathematik,
+      categories.Sport,
+    ],
+    grundkurse: [
+      categories.Deutsch,
+      categories["Gesellschaftswissenschaftliches Fach"].Grundkurs,
+      categories.Naturwissenschaft,
+      categories.Religionslehre.Grundkurs,
+      categories["Verpflichtende Kurse 1"],
+      categories["Verpflichtende Kurse 2"],
+    ],
+    pflichtstunden: 32,
+  },
+  {
+    id: 19,
+    leistungskurse: [
+      categories.Fremdsprache,
+      categories.Mathematik,
+      categories.Religionslehre,
+    ],
+    grundkurse: [
+      categories.Deutsch,
+      categories["Gesellschaftswissenschaftliches Fach"].Grundkurs,
+      categories.Naturwissenschaft,
+      categories.Sport,
+      categories["Verpflichtende Kurse 1"],
+      categories["Verpflichtende Kurse 2"],
+    ],
+    pflichtstunden: 32,
+  },
+  {
+    id: 20,
+    leistungskurse: [
+      categories.Fremdsprache,
+      categories.Mathematik,
+      categories["Künstlerisches Fach"],
+    ],
+    grundkurse: [
+      categories.Deutsch,
+      categories["Gesellschaftswissenschaftliches Fach"].Grundkurs,
+      categories.Naturwissenschaft,
+      categories.Religionslehre,
+      categories.Sport,
+      categories["Verpflichtende Kurse 1"],
+    ],
+    pflichtstunden: 32,
+  },
+  {
+    id: 21,
+    leistungskurse: [
+      categories.Naturwissenschaft,
+      categories.Deutsch,
+      categories.Informatik,
+    ],
+    grundkurse: [
+      categories.Fremdsprache,
+      categories["Gesellschaftswissenschaftliches Fach"].Grundkurs,
+      categories.Mathematik,
+      categories.Religionslehre,
+      categories.Sport,
+      categories["Verpflichtende Kurse 2"],
+    ],
+    pflichtstunden: 32,
+  },
+  {
+    id: 22,
+    leistungskurse: [
+      categories.Fremdsprache,
+      categories.Naturwissenschaft,
+      categories.Sport,
+    ],
+    grundkurse: [
+      categories.Deutsch,
+      categories["Gesellschaftswissenschaftliches Fach"].Grundkurs,
+      categories.Mathematik,
+      categories.Religionslehre,
+      categories["Verpflichtende Kurse 1"],
+      categories["Verpflichtende Kurse 2"],
+    ],
+    pflichtstunden: 32,
+  },
 ];
 
 export { courseCombinations, subjectAreas, allCourses };
