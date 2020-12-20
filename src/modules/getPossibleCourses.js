@@ -1,4 +1,4 @@
-import { courseCombinations } from "./courses";
+import { courseCombinations } from "./courseCombinations";
 
 /**
  * Search for futher possible courses

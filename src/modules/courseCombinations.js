@@ -332,7 +332,7 @@ const courseCombinations = [
       categories["Verpflichtende Kurse 1"],
       categories["Verpflichtende Kurse 2"],
     ],
-    pflichtstunden: 32,
+    pflichtstunden: 35,
   },
   {
     id: 19,
@@ -400,7 +400,7 @@ const courseCombinations = [
       categories["Verpflichtende Kurse 1"],
       categories["Verpflichtende Kurse 2"],
     ],
-    pflichtstunden: 32,
+    pflichtstunden: 35,
   },
   {
     id: 23,
@@ -417,7 +417,7 @@ const courseCombinations = [
       categories["Verpflichtende Kurse 1"],
       categories["Verpflichtende Kurse 2"],
     ],
-    pflichtstunden: 32,
+    pflichtstunden: 33,
   },
   {
     id: 24,
@@ -451,7 +451,7 @@ const courseCombinations = [
       categories["Verpflichtende Kurse 1"],
       categories["Verpflichtende Kurse 1"],
     ],
-    pflichtstunden: 32,
+    pflichtstunden: 35,
   },
   {
     id: 26,
@@ -468,7 +468,7 @@ const courseCombinations = [
       categories["Verpflichtende Kurse 1"],
       categories["Verpflichtende Kurse 1"],
     ],
-    pflichtstunden: 32,
+    pflichtstunden: 33,
   },
   {
     id: 27,
@@ -519,23 +519,23 @@ const courseCombinations = [
       categories["Verpflichtende Kurse 1"],
       categories["Verpflichtende Kurse 1"],
     ],
-    pflichtstunden: 35,
+    pflichtstunden: 33,
   },
   {
     id: 30,
     leistungskurse: [
       categories.Naturwissenschaft,
       categories.Deutsch,
-      categories.Religionslehre.Leistungskurs,
+      categories["Künstlerisches Fach"].Leistungskurs,
     ],
     grundkurse: [
       categories.Fremdsprache,
       categories["Gesellschaftswissenschaftliches Fach"].Grundkurs,
       categories.Mathematik,
+      categories.Religionslehre,
       categories.Sport,
       categories["Verpflichtende Kurse 1"],
-      categories["Verpflichtende Kurse 1"],
     ],
-    pflichtstunden: 33,
+    pflichtstunden: 32,
   },
 ];
