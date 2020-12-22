@@ -1,4 +1,3 @@
-import Category from "../components/Category";
 import courseCombinations from "./courseCombinations";
 
 /**
@@ -14,7 +13,7 @@ import courseCombinations from "./courseCombinations";
  * @param {string[]} courses Courses to be reviewed
  * @param {string[][]} cluster Group of categories
  *
- * @returns {Array} Whether cluster contains courses and non-contains categories of the cluster
+ * @returns {[boolean, string[][]} Whether cluster contains courses and non-contains categories of the cluster
  */
 function isIncludedInCluster(courses, cluster) {
   const isIncluded = courses.every((course) =>

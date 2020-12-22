@@ -26,6 +26,7 @@ function AdvancedCourses() {
         return unusedCategories.flat();
       })
       .flat();
+
     const disabledCourses = allAdvancedCourses.filter(
       (course) =>
         !advancedCourses.includes(course) &&
