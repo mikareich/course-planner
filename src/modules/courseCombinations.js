@@ -532,10 +532,12 @@ const courseCombinations = [
       categories.Fremdsprache,
       categories["Gesellschaftswissenschaftliches Fach"].Grundkurs,
       categories.Mathematik,
-      categories.Religionslehre,
+      categories.Religionslehre.Grundkurs,
       categories.Sport,
       categories["Verpflichtende Kurse 1"],
     ],
     pflichtstunden: 32,
   },
 ];
+
+export default courseCombinations;

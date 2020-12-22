@@ -1,41 +1,42 @@
-import React, { createContext, useEffect, useState } from "react";
-import { allCourses } from "../modules/courses";
-import getPossibleCourses from "../modules/getPossibleCourses";
+import React, { createContext, useState } from "react";
 
-const courseContext = createContext();
+const CourseContext = createContext();
 
 function CourseProvider({ children }) {
-  const [disabledCourses, setDisabledCourses] = useState(allCourses);
-  const [selectedCourses, setSelectedCourses] = useState([]);
+  const [advancedCourses, setAdvancedCourses] = useState([]);
+  const [basicCourses, setBasicCourses] = useState([]);
+  const [disabledCourses, setDisabledCourses] = useState([]);
 
-  function selectCourse(name) {
-    setSelectedCourses((courses) => [...courses, name]);
-  }
+  const toggleCourse = (type, name) => {
+    const associatedArray =
+      type === "advanced-course" ? advancedCourses : basicCourses;
+    const associatedDispatcher =
+      type === "advanced-course" ? setAdvancedCourses : setBasicCourses;
 
-  function unselectCourse(name) {
-    setSelectedCourses((courses) => {
-      const indexCourse = courses.indexOf(name);
-      // remove item from courses
-      courses.splice(indexCourse, 1);
-
-      return [...courses]; // remove relation to argument
-    });
-  }
-
-  useEffect(() => {
-    const possibleCourses = getPossibleCourses(selectedCourses);
-    setDisabledCourses(
-      allCourses.filter((course) => !possibleCourses.includes(course))
-    );
-  }, [selectedCourses]);
+    if (associatedArray.includes(name)) {
+      // remove course from array
+      const courseIndex = associatedArray.indexOf(name);
+      associatedArray.splice(courseIndex, 1);
+      associatedDispatcher([...associatedArray]);
+    } else {
+      // add course
+      associatedDispatcher([...associatedArray, name]);
+    }
+  };
 
   return (
-    <courseContext.Provider
-      value={{ disabledCourses, selectCourse, unselectCourse }}
+    <CourseContext.Provider
+      value={{
+        advancedCourses,
+        basicCourses,
+        disabledCourses,
+        setDisabledCourses,
+        toggleCourse,
+      }}
     >
       {children}
-    </courseContext.Provider>
+    </CourseContext.Provider>
   );
 }
 
-export { CourseProvider, courseContext };
+export { CourseProvider, CourseContext };

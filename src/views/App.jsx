@@ -1,8 +1,11 @@
 import React from "react";
-import Category from "../components/Category";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { CourseProvider } from "../components/CourseContext";
-import CourseItem from "../components/CourseItem";
-import { subjectAreas } from "../modules/courses";
+
+// Routes
+import AdvancedCourses from "./AdvancedCourses";
+import BasicCourses from "./BasicCourses";
+import Overview from "./Overview";
 
 function App() {
   return (
@@ -11,19 +14,15 @@ function App() {
         <header className="header" />
 
         <main className="main">
-          {
-            // display categories with dedicated courses
-            Object.entries(subjectAreas).map(([subject, courses]) => (
-              <Category label={subject} key={subject}>
-                {
-                  // display courses
-                  courses.flat().map((courseName) => (
-                    <CourseItem name={courseName} key={courseName} />
-                  ))
-                }
-              </Category>
-            ))
-          }
+          <Switch>
+            <Route path="/leistungskurse" component={AdvancedCourses} />
+            <Route path="/grundkurse" component={BasicCourses} />
+            <Route path="/ueberblick" component={Overview} />
+
+            <Route exact path="/*">
+              <Redirect to="/leistungskurse" />
+            </Route>
+          </Switch>
         </main>
 
         <footer className="footer" />

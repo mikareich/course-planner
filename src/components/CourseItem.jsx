@@ -1,36 +1,31 @@
 import React, { useContext, useEffect, useState } from "react";
-import { courseContext } from "./CourseContext";
+import { CourseContext } from "./CourseContext";
 
-function CourseItem({ name }) {
-  const { disabledCourses, selectCourse, unselectCourse } = useContext(
-    courseContext
-  );
+function CourseItem({ name, type }) {
+  const { disabledCourses, toggleCourse } = useContext(CourseContext);
+
   const [disabled, setDisabled] = useState(false);
   const [selected, setSelected] = useState(false);
 
-  // disable when listet as disabled
-  useEffect(() => setDisabled(disabledCourses.includes(name)), [
-    disabledCourses,
-  ]);
-
-  // toggle selection
-  const toggleCourse = () => {
+  const selectCourse = () => {
     if (disabled) return;
-    setSelected(!selected);
 
-    if (selected) {
-      unselectCourse(name);
-    } else {
-      selectCourse(name);
-    }
+    setSelected(!selected);
+    toggleCourse(type, name);
   };
+
+  useEffect(() => {
+    const isDisabled = disabledCourses.includes(name);
+
+    setDisabled(isDisabled);
+  }, [disabledCourses]);
 
   return (
     <button
       className={`course-item 
       ${selected && "selected"} ${disabled && "disabled"}`}
       type="button"
-      onClick={toggleCourse}
+      onClick={selectCourse}
     >
       <span className="name">{name}</span>
     </button>
