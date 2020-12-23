@@ -35,6 +35,7 @@ function isIncludedInCluster(courses, cluster) {
  * @returns {CourseCombination[]} Course-combination
  */
 function getCourseCombination(advancedCourses) {
+  /** @type {CourseCombination[]} */
   const matchingCombinations = [];
 
   COURSE_COMBINATIONS.forEach((combination) => {

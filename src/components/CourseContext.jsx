@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import { CATEGORIES } from "../utils/courses";
 
 const CourseContext = createContext();
 
@@ -6,7 +7,25 @@ function CourseProvider({ children }) {
   const [advancedCourses, setAdvancedCourses] = useState([]);
   const [basicCourses, setBasicCourses] = useState([]);
   const [disabledCourses, setDisabledCourses] = useState([]);
-  const [selectedCombination, setSelectedCombination] = useState([]);
+  // TODO: set default value to null in production
+  const [selectedCombination, setSelectedCombination] = useState({
+    id: 14,
+    advancedCourses: [
+      CATEGORIES.Mathematik,
+      CATEGORIES.Naturwissenschaft,
+      CATEGORIES["Gesellschaftswissenschaftliches Fach"].AdvancedCourses,
+    ],
+    mandatoryBasicCourses: [
+      CATEGORIES.Deutsch,
+      CATEGORIES.Fremdsprache,
+      CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
+      CATEGORIES.Religionslehre.BasicCourses,
+      CATEGORIES.Sport,
+      CATEGORIES["Verpflichtende Kurse 1"],
+      CATEGORIES["Verpflichtende Kurse 2"],
+    ],
+    mandatoryWeeklyHours: 32,
+  });
 
   const toggleCourse = (type, name) => {
     const associatedArray =
@@ -34,7 +53,7 @@ function CourseProvider({ children }) {
         setDisabledCourses,
         toggleCourse,
         selectedCombination,
-        setSelectedCombination  ,
+        setSelectedCombination,
       }}
     >
       {children}
