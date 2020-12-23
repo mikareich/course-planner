@@ -1,11 +1,11 @@
-import courseCombinations from "./courseCombinations";
+import COURSE_COMBINATIONS from "./courseCombinations";
 
 /**
  * @typedef {Object} CourseCombination
  * @property {number} id ID of combination
- * @property {string[][]} leistungskurse Advanced courses of this combination
- * @property {string[] | string[][]} grundkurse Mandatory basic courses of this combination
- * @property {number} pflichtstunden Mandatory weekly hours of this combination
+ * @property {string[][]} advancedCourses Advanced courses of this combination
+ * @property {string[] | string[][]} mandatoryBasicCourses Mandatory basic courses of this combination
+ * @property {number} mandatoryWeeklyHours Mandatory weekly hours of this combination
  */
 
 /**
@@ -37,9 +37,9 @@ function isIncludedInCluster(courses, cluster) {
 function getCourseCombination(advancedCourses) {
   const matchingCombinations = [];
 
-  courseCombinations.forEach((combination) => {
+  COURSE_COMBINATIONS.forEach((combination) => {
     // delete refference
-    const CLUSTER = [...combination.leistungskurse];
+    const CLUSTER = [...combination.advancedCourses];
 
     const [includesSelectedCourses] = isIncludedInCluster(
       advancedCourses,

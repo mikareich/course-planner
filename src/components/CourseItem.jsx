@@ -23,7 +23,7 @@ function CourseItem({ name, type }) {
   return (
     <button
       className={`course-item 
-      ${selected && "selected"} ${disabled && "disabled"}`}
+      ${selected ? "selected" : ""} ${disabled ? "disabled" : ""}`}
       type="button"
       onClick={selectCourse}
     >

@@ -6,6 +6,7 @@ function CourseProvider({ children }) {
   const [advancedCourses, setAdvancedCourses] = useState([]);
   const [basicCourses, setBasicCourses] = useState([]);
   const [disabledCourses, setDisabledCourses] = useState([]);
+  const [selectedCombination, setSelectedCombination] = useState([]);
 
   const toggleCourse = (type, name) => {
     const associatedArray =
@@ -32,6 +33,8 @@ function CourseProvider({ children }) {
         disabledCourses,
         setDisabledCourses,
         toggleCourse,
+        selectedCombination,
+        setSelectedCombination  ,
       }}
     >
       {children}

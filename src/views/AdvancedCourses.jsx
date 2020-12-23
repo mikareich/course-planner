@@ -1,44 +1,51 @@
 import React, { useContext, useEffect } from "react";
 import CourseItem from "../components/CourseItem";
-import { subjectAreas } from "../modules/courses";
+import { ADVANCED_COURSES, SUBJECT_AREAS } from "../utils/courses";
 import Category from "../components/Category";
 import { CourseContext } from "../components/CourseContext";
 import {
   getCourseCombination,
   isIncludedInCluster,
-} from "../modules/getCourseCombination";
-
-const allAdvancedCourses = Object.entries(subjectAreas)
-  .map(([, courses]) => courses.Leistungskurs || courses)
-  .flat(2);
+} from "../utils/getCourseCombination";
 
 function AdvancedCourses() {
-  const { advancedCourses, setDisabledCourses } = useContext(CourseContext);
+  const {
+    advancedCourses: selectedAdvancedCourses,
+    setDisabledCourses,
+    setSelectedCombination,
+  } = useContext(CourseContext);
 
   useEffect(() => {
-    const matchingCombinations = getCourseCombination(advancedCourses);
+    const matchingCombinations = getCourseCombination(selectedAdvancedCourses);
+    // disable impossible courses
     const possibleAdvancedCourses = matchingCombinations
-      .map(({ leistungskurse }) => {
-        const [, unusedCategories] = isIncludedInCluster(advancedCourses, [
-          ...leistungskurse,
-        ]);
+      .map(({ advancedCourses }) => {
+        const [
+          ,
+          unusedCategories,
+        ] = isIncludedInCluster(selectedAdvancedCourses, [...advancedCourses]);
 
         return unusedCategories.flat();
       })
       .flat();
 
-    const disabledCourses = allAdvancedCourses.filter(
+    const disabledCourses = ADVANCED_COURSES.filter(
       (course) =>
-        !advancedCourses.includes(course) &&
+        !selectedAdvancedCourses.includes(course) &&
         !possibleAdvancedCourses.includes(course)
     );
     setDisabledCourses(disabledCourses);
-  }, [advancedCourses]);
+
+    // set matching combination
+    if (matchingCombinations.length === 1) {
+      setSelectedCombination(matchingCombinations[0]);
+    }
+  }, [selectedAdvancedCourses]);
 
   return (
     <div className="advancedCourses">
-      {Object.entries(subjectAreas).map(([subject, coursesObject]) => {
-        const courses = (coursesObject.Leistungskurs || coursesObject).flat();
+      {Object.entries(SUBJECT_AREAS).map(([subject, coursesObject]) => {
+        const courses = (coursesObject.AdvancedCourses || coursesObject).flat();
         return (
           <Category label={subject} key={subject}>
             {courses.flat().map((course) => (
