@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect, Link } from "react-router-dom";
 import { CourseProvider } from "../components/CourseContext";
 
 // Routes
@@ -11,7 +11,11 @@ function App() {
   return (
     <div className="App">
       <CourseProvider>
-        <header className="header" />
+        <header className="header">
+          <Link to="/leistungskurse">leistungskurse</Link>
+          {" / "}
+          <Link to="/grundkurse">grundkurse </Link>
+        </header>
 
         <main className="main">
           <Switch>
@@ -25,7 +29,7 @@ function App() {
           </Switch>
         </main>
 
-        <footer className="footer" />
+        <footer className="footer">*Verpflichtend</footer>
       </CourseProvider>
     </div>
   );

@@ -3,6 +3,7 @@
   --bg: #eceff4;
   --bg-accent: white;
   --primary: #88c0d0;
+  --secondary: #8fbcbb;
 
   --text: #2e3440;
   --text-light-1: #3b4252;
@@ -70,6 +71,13 @@ body {
 }
 .course-item.disabled {
   opacity: 0.5;
+}
+.course-item.mandatory {
+  position: relative;
+}
+.course-item.mandatory::after {
+  content: "*";
+  color: var(--text-1);
 }
 .category .label {
   color: var(--text-light-1);

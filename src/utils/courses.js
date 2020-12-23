@@ -137,6 +137,7 @@ export const SUBJECT_AREAS = {
     BasicCourses: [
       CATEGORIES.Sport,
       CATEGORIES["Künstlerisches Fach"].BasicCourses,
+      CATEGORIES.Philosophie,
     ],
     AdvancedCourses: [
       CATEGORIES.Sport,

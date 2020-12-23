@@ -1,31 +1,42 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CourseContext } from "./CourseContext";
 
-function CourseItem({ name, type }) {
-  const { disabledCourses, toggleCourse } = useContext(CourseContext);
+function CourseItem({ name, type, mandatory }) {
+  const {
+    disabledAdvancedCourses,
+    disabledBasicCourses,
+    toggleCourse,
+    basicCourses,
+    advancedCourses,
+  } = useContext(CourseContext);
 
   const [disabled, setDisabled] = useState(false);
   const [selected, setSelected] = useState(false);
 
-  const selectCourse = () => {
-    if (disabled) return;
-
-    setSelected(!selected);
-    toggleCourse(type, name);
-  };
+  useEffect(() => {
+    const isIncluded =
+      type === "advanced-course"
+        ? advancedCourses.includes(name)
+        : basicCourses.includes(name);
+    setSelected(isIncluded);
+  }, [basicCourses, advancedCourses]);
 
   useEffect(() => {
-    const isDisabled = disabledCourses.includes(name);
-
-    setDisabled(isDisabled);
-  }, [disabledCourses]);
+    const isIncluded =
+      type === "advanced-course"
+        ? disabledAdvancedCourses.includes(name)
+        : disabledBasicCourses.includes(name);
+    setDisabled(isIncluded);
+  }, [disabledAdvancedCourses, disabledBasicCourses]);
 
   return (
     <button
       className={`course-item 
-      ${selected ? "selected" : ""} ${disabled ? "disabled" : ""}`}
+      ${selected ? "selected" : ""} ${disabled ? "disabled" : ""} ${
+        mandatory ? "mandatory" : ""
+      }`}
       type="button"
-      onClick={selectCourse}
+      onClick={() => !disabled && !mandatory && toggleCourse(type, name)}
     >
       <span className="name">{name}</span>
     </button>

@@ -11,7 +11,7 @@ import {
 function AdvancedCourses() {
   const {
     advancedCourses: selectedAdvancedCourses,
-    setDisabledCourses,
+    setDisabledAdvancedCourses,
     setSelectedCombination,
   } = useContext(CourseContext);
 
@@ -34,11 +34,13 @@ function AdvancedCourses() {
         !selectedAdvancedCourses.includes(course) &&
         !possibleAdvancedCourses.includes(course)
     );
-    setDisabledCourses(disabledCourses);
+    setDisabledAdvancedCourses(disabledCourses);
 
     // set matching combination
     if (matchingCombinations.length === 1) {
       setSelectedCombination(matchingCombinations[0]);
+    } else {
+      setSelectedCombination(null);
     }
   }, [selectedAdvancedCourses]);
 

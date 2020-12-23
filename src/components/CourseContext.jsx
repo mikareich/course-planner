@@ -6,26 +6,9 @@ const CourseContext = createContext();
 function CourseProvider({ children }) {
   const [advancedCourses, setAdvancedCourses] = useState([]);
   const [basicCourses, setBasicCourses] = useState([]);
-  const [disabledCourses, setDisabledCourses] = useState([]);
-  // TODO: set default value to null in production
-  const [selectedCombination, setSelectedCombination] = useState({
-    id: 14,
-    advancedCourses: [
-      CATEGORIES.Mathematik,
-      CATEGORIES.Naturwissenschaft,
-      CATEGORIES["Gesellschaftswissenschaftliches Fach"].AdvancedCourses,
-    ],
-    mandatoryBasicCourses: [
-      CATEGORIES.Deutsch,
-      CATEGORIES.Fremdsprache,
-      CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
-      CATEGORIES.Religionslehre.BasicCourses,
-      CATEGORIES.Sport,
-      CATEGORIES["Verpflichtende Kurse 1"],
-      CATEGORIES["Verpflichtende Kurse 2"],
-    ],
-    mandatoryWeeklyHours: 32,
-  });
+  const [disabledAdvancedCourses, setDisabledAdvancedCourses] = useState([]);
+  const [disabledBasicCourses, setDisabledBasicCourses] = useState([]);
+  const [selectedCombination, setSelectedCombination] = useState(null);
 
   const toggleCourse = (type, name) => {
     const associatedArray =
@@ -49,8 +32,11 @@ function CourseProvider({ children }) {
       value={{
         advancedCourses,
         basicCourses,
-        disabledCourses,
-        setDisabledCourses,
+        setBasicCourses,
+        disabledAdvancedCourses,
+        setDisabledAdvancedCourses,
+        disabledBasicCourses,
+        setDisabledBasicCourses,
         toggleCourse,
         selectedCombination,
         setSelectedCombination,
