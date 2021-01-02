@@ -35,7 +35,6 @@ function AdvancedCourses() {
         !possibleAdvancedCourses.includes(course)
     );
     setDisabledAdvancedCourses(disabledCourses);
-
     // set matching combination
     if (matchingCombinations.length === 1) {
       setSelectedCombination(matchingCombinations[0]);

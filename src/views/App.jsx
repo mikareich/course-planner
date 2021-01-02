@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect, Link } from "react-router-dom";
 import { CourseProvider } from "../components/CourseContext";
+import NavBar from "../components/NavBar";
 
 // Routes
 import AdvancedCourses from "./AdvancedCourses";
@@ -11,11 +12,7 @@ function App() {
   return (
     <div className="App">
       <CourseProvider>
-        <header className="header">
-          <Link to="/leistungskurse">leistungskurse</Link>
-          {" / "}
-          <Link to="/grundkurse">grundkurse </Link>
-        </header>
+        <NavBar />
 
         <main className="main">
           <Switch>

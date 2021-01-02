@@ -11,7 +11,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Mathematik,
       CATEGORIES.Deutsch,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Naturwissenschaft,
       CATEGORIES.Religionslehre.BasicCourses,
@@ -28,7 +28,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Naturwissenschaft,
       CATEGORIES.Deutsch,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Mathematik,
       CATEGORIES.Religionslehre.BasicCourses,
@@ -45,7 +45,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Deutsch,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].AdvancedCourses,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Mathematik,
       CATEGORIES.Naturwissenschaft,
@@ -63,7 +63,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Fremdsprache,
       CATEGORIES.Mathematik,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Deutsch,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Naturwissenschaft,
@@ -80,7 +80,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Fremdsprache,
       CATEGORIES.Naturwissenschaft,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Deutsch,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Mathematik,
@@ -97,7 +97,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Fremdsprache,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].AdvancedCourses,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Deutsch,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Mathematik,
@@ -115,7 +115,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Mathematik,
       CATEGORIES.Naturwissenschaft,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Deutsch,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Religionslehre.BasicCourses,
@@ -132,7 +132,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Mathematik,
       CATEGORIES.Informatik,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Deutsch,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Naturwissenschaft,
@@ -149,7 +149,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Mathematik,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].AdvancedCourses,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Deutsch,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Naturwissenschaft,
@@ -167,7 +167,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Naturwissenschaft,
       CATEGORIES.Naturwissenschaft,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Deutsch,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Mathematik,
@@ -184,7 +184,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Naturwissenschaft,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].AdvancedCourses,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Deutsch,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Mathematik,
@@ -202,7 +202,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Naturwissenschaft,
       CATEGORIES.Informatik,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Deutsch,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Mathematik,
@@ -219,7 +219,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Naturwissenschaft,
       CATEGORIES.Deutsch,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Fremdsprache,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Religionslehre.BasicCourses,
@@ -236,7 +236,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Deutsch,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].AdvancedCourses,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Fremdsprache,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Naturwissenschaft,
@@ -254,7 +254,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Naturwissenschaft,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].AdvancedCourses,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Deutsch,
       CATEGORIES.Fremdsprache,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
@@ -272,7 +272,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Naturwissenschaft,
       CATEGORIES.Deutsch,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Fremdsprache,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Mathematik,
@@ -289,7 +289,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Deutsch,
       CATEGORIES.Informatik,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Fremdsprache,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Naturwissenschaft,
@@ -306,7 +306,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Deutsch,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].AdvancedCourses,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Fremdsprache,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Mathematik,
@@ -324,7 +324,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Mathematik,
       CATEGORIES.Sport,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Deutsch,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Naturwissenschaft,
@@ -341,7 +341,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Mathematik,
       CATEGORIES.Religionslehre.AdvancedCourses,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Deutsch,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Naturwissenschaft,
@@ -358,7 +358,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Mathematik,
       CATEGORIES["Künstlerisches Fach"].AdvancedCourses,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Deutsch,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Naturwissenschaft,
@@ -375,7 +375,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Deutsch,
       CATEGORIES.Informatik,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Fremdsprache,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Mathematik,
@@ -392,7 +392,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Naturwissenschaft,
       CATEGORIES.Sport,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Deutsch,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Mathematik,
@@ -409,7 +409,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Naturwissenschaft,
       CATEGORIES.Religionslehre.AdvancedCourses,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Deutsch,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Mathematik,
@@ -426,7 +426,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Naturwissenschaft,
       CATEGORIES["Künstlerisches Fach"].AdvancedCourses,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Deutsch,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Mathematik,
@@ -443,7 +443,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Deutsch,
       CATEGORIES.Sport,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Fremdsprache,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Naturwissenschaft,
@@ -460,7 +460,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Deutsch,
       CATEGORIES.Religionslehre.AdvancedCourses,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Fremdsprache,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Naturwissenschaft,
@@ -477,7 +477,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Deutsch,
       CATEGORIES["Künstlerisches Fach"].AdvancedCourses,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Fremdsprache,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Naturwissenschaft,
@@ -494,7 +494,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Deutsch,
       CATEGORIES.Sport,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Fremdsprache,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Mathematik,
@@ -511,7 +511,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Deutsch,
       CATEGORIES.Religionslehre.AdvancedCourses,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Fremdsprache,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Mathematik,
@@ -528,7 +528,7 @@ const COURSE_COMBINATIONS = [
       CATEGORIES.Deutsch,
       CATEGORIES["Künstlerisches Fach"].AdvancedCourses,
     ],
-    mandatoryBasicCourses: [
+    mandatoryBasicCourseCategories: [
       CATEGORIES.Fremdsprache,
       CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
       CATEGORIES.Mathematik,

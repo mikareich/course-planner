@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
-import { SUBJECT_AREAS } from "../utils/courses";
+import { SINGLE_COURSE_CATEGORIES, SUBJECT_AREAS } from "../utils/courses";
 import Category from "../components/Category";
 import CourseItem from "../components/CourseItem";
 import { CourseContext } from "../components/CourseContext";
+import assignBasicCourses from "../utils/assignBasicCourses";
 
 function BasicCourses() {
   const {
@@ -13,39 +14,46 @@ function BasicCourses() {
     setDisabledBasicCourses,
   } = useContext(CourseContext);
 
-  const [allBasicCoursesSelected, setAllBasicCoursesSelected] = useState(false);
-
-  const getClearMandatoryCourses = () =>
-    selectedCombination.mandatoryBasicCourses
-      .map((category) => (category.length === 1 ? category[0] : undefined))
-      .filter((n) => n);
+  const [selectionValid, setSelectionValid] = useState(false);
   const [mandatoryBasicCourses, setMandatoryBasicCourses] = useState([]);
 
-  // checks "Gesellschaftswissenschaftliches Fächer" and auto-select clear mandatory courses
+  // RESET HOOKS
   useEffect(() => {
-    let courses;
-    if (advancedCourses.includes("Geschichte")) {
-      courses = [...getClearMandatoryCourses(), "Sozialkunde/ Erdkunde"];
-    } else if (
+    // auto-select mandatory scc (see readme)
+    const mandatorySCC = selectedCombination.mandatoryBasicCourseCategories.filter(
+      (category) => SINGLE_COURSE_CATEGORIES.includes(category)
+    );
+    const mandatoryCourses = [...mandatorySCC.flat()];
+    // auto-select "Gesellschaftswissenschaftliches Fach"
+    if (
       advancedCourses.includes("Erdkunde") ||
       advancedCourses.includes("Sozialkunde")
     ) {
-      courses = [...getClearMandatoryCourses(), "Geschichte"];
+      mandatoryCourses.push("Geschichte");
+    } else if (advancedCourses.includes("Geschichte")) {
+      mandatoryCourses.push("Sozialkunde/ Erdkunde");
+      // 'Geschichte' is already disabled because its selected as advanced course
     } else {
-      courses = [
-        ...getClearMandatoryCourses(),
-        "Geschichte",
-        "Sozialkunde/ Erdkunde",
-      ];
+      mandatoryCourses.push("Geschichte");
+      mandatoryCourses.push("Sozialkunde/ Erdkunde");
     }
-    setBasicCourses(courses);
-    setMandatoryBasicCourses(courses);
+
+    setDisabledBasicCourses(assignBasicCourses([], advancedCourses));
+
+    setMandatoryBasicCourses(mandatoryCourses);
+    setBasicCourses(mandatoryCourses);
   }, [selectedCombination]);
 
-  // disable selected advanced courses
   useEffect(() => {
-    setDisabledBasicCourses([...advancedCourses]);
-  }, [selectedCombination]);
+    console.log(basicCourses);
+    const [disabledCourses, occupiedCourses] = assignBasicCourses(
+      basicCourses,
+      advancedCourses
+    );
+    setDisabledBasicCourses(() => disabledCourses);
+    const allCoursesOccupied = occupiedCourses.every((n) => n);
+    setSelectionValid(allCoursesOccupied);
+  }, [basicCourses]);
 
   return (
     <div className="basicCourses">

@@ -49,6 +49,7 @@ export const BASIC_COURSES = [
   "Sport",
   "Musik",
   "Bildende Kunst",
+  "Darstellendes Spiel",
 ];
 
 /**
@@ -70,11 +71,9 @@ export const ADVANCED_COURSES = [
   "Informatik",
   "Evangelische Religion",
   "Katholische Religion",
-  "Philosophie",
   "Sport",
   "Musik",
   "Bildende Kunst",
-  "Darstellendes Spiel",
 ];
 
 /**
@@ -113,6 +112,30 @@ export const CATEGORIES = {
     ];
   },
 };
+
+export const MANDATORY_COURSE_CATEGORIES = [
+  CATEGORIES.Deutsch,
+  CATEGORIES.Fremdsprache,
+  CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
+  CATEGORIES.Mathematik,
+  CATEGORIES.Naturwissenschaft,
+  CATEGORIES.Religionslehre.BasicCourses,
+  CATEGORIES.Sport,
+  CATEGORIES["Verpflichtende Kurse 1"],
+  CATEGORIES["Verpflichtende Kurse 2"],
+];
+
+/**
+ * Categories with only one course
+ */
+export const SINGLE_COURSE_CATEGORIES = [
+  CATEGORIES.Deutsch,
+  CATEGORIES.Mathematik,
+  CATEGORIES.Informatik,
+  CATEGORIES.Sport,
+  CATEGORIES.Philosophie,
+];
+
 /**
  * The different subject areas of the courses
  */
@@ -145,3 +168,44 @@ export const SUBJECT_AREAS = {
     ],
   },
 };
+
+export const NUMBER_OF_HOURS_ADVANCED_COURSES = [
+  // Sprachen - 7 hours
+  [[...CATEGORIES.Deutsch, ...CATEGORIES.Fremdsprache], 7],
+  // Gesellschaftswissenschaftliches Fach - 4 hours
+  [CATEGORIES["Gesellschaftswissenschaftliches Fach"].AdvancedCourses, 4],
+  // default - 5 hours
+  [
+    [
+      ...CATEGORIES.Mathematik,
+      ...CATEGORIES.Naturwissenschaft,
+      ...CATEGORIES.Religionslehre.AdvancedCourses,
+      ...CATEGORIES.Sport,
+      ...CATEGORIES.Informatik,
+    ],
+    5,
+  ],
+];
+
+export const NUMBER_OF_HOURS_BASIC_COURSES = [
+  [
+    [
+      ...CATEGORIES.Deutsch,
+      ...CATEGORIES.Fremdsprache,
+      ...CATEGORIES.Mathematik,
+      ...CATEGORIES.Naturwissenschaft,
+      ...CATEGORIES.Informatik,
+      ...CATEGORIES["Künstlerisches Fach"].BasicCourses,
+      ...CATEGORIES.Philosophie,
+    ],
+    3,
+  ],
+  [
+    [
+      ...CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
+      ...CATEGORIES.Religionslehre.BasicCourses,
+      ...CATEGORIES.Sport,
+    ],
+    2,
+  ],
+];

@@ -4,7 +4,7 @@ import COURSE_COMBINATIONS from "./courseCombinations";
  * @typedef {Object} CourseCombination
  * @property {number} id ID of combination
  * @property {string[][]} advancedCourses Advanced courses of this combination
- * @property {string[] | string[][]} mandatoryBasicCourses Mandatory basic courses of this combination
+ * @property {string[] | string[][]} mandatoryBasicCourseCategories Mandatory basic courses of this combination
  * @property {number} mandatoryWeeklyHours Mandatory weekly hours of this combination
  */
 
@@ -13,7 +13,7 @@ import COURSE_COMBINATIONS from "./courseCombinations";
  * @param {string[]} courses Courses to be reviewed
  * @param {string[][]} cluster Group of categories
  *
- * @returns {[boolean, string[][]} Whether cluster contains courses and non-contains categories of the cluster
+ * @returns {[boolean, string[][]]} Whether cluster contains courses and non-contains categories of the cluster
  */
 function isIncludedInCluster(courses, cluster) {
   const isIncluded = courses.every((course) =>

@@ -1,0 +1,55 @@
+:root {
+  /* Using (nord color scheme)[https://www.nordtheme.com/] */
+  --bg: #eceff4;
+  --bg-accent: white;
+  --primary: #88c0d0;
+  --secondary: #8fbcbb;
+
+  --text: #2e3440;
+  --text-light-1: #3b4252;
+  --text-light-2: #434c5e;
+}
+h1 {
+  font-family: "Rubik", sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--text);
+}
+h2 {
+  font-family: "Rubik", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: var(--text);
+}
+h3 {
+  font-family: "Rubik", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--text);
+}
+h4 {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--text);
+}
+h5 {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text);
+}
+
+p,
+span {
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.small {
+  font-family: "Rubik", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
