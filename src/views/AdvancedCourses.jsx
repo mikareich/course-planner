@@ -13,6 +13,7 @@ function AdvancedCourses() {
     advancedCourses: selectedAdvancedCourses,
     setDisabledAdvancedCourses,
     setSelectedCombination,
+    setValidRoutes,
   } = useContext(CourseContext);
 
   useEffect(() => {
@@ -38,7 +39,9 @@ function AdvancedCourses() {
     // set matching combination
     if (matchingCombinations.length === 1) {
       setSelectedCombination(matchingCombinations[0]);
+      setValidRoutes(["/leistungskurse", "/grundkurse"]);
     } else {
+      setValidRoutes(["/leistungskurse"]);
       setSelectedCombination(null);
     }
   }, [selectedAdvancedCourses]);

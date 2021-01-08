@@ -1,24 +1,35 @@
 import React, { useContext, useEffect, useState } from "react";
-import { SINGLE_COURSE_CATEGORIES, SUBJECT_AREAS } from "../utils/courses";
+import { useHistory } from "react-router-dom";
+import {
+  CATEGORIES,
+  SINGLE_COURSE_CATEGORIES,
+  SUBJECT_AREAS,
+} from "../utils/courses";
 import Category from "../components/Category";
 import CourseItem from "../components/CourseItem";
 import { CourseContext } from "../components/CourseContext";
 import assignBasicCourses from "../utils/assignBasicCourses";
 
 function BasicCourses() {
+  const history = useHistory();
   const {
     advancedCourses,
     selectedCombination,
     basicCourses,
     setBasicCourses,
     setDisabledBasicCourses,
+    setValidRoutes,
   } = useContext(CourseContext);
 
-  const [selectionValid, setSelectionValid] = useState(false);
   const [mandatoryBasicCourses, setMandatoryBasicCourses] = useState([]);
 
   // RESET HOOKS
   useEffect(() => {
+    if (advancedCourses.length !== 3) {
+      setValidRoutes(["/leistungskurse"]);
+      history.push("/leistungskurse");
+      return;
+    }
     // auto-select mandatory scc (see readme)
     const mandatorySCC = selectedCombination.mandatoryBasicCourseCategories.filter(
       (category) => SINGLE_COURSE_CATEGORIES.includes(category)
@@ -45,14 +56,22 @@ function BasicCourses() {
   }, [selectedCombination]);
 
   useEffect(() => {
-    console.log(basicCourses);
-    const [disabledCourses, occupiedCourses] = assignBasicCourses(
-      basicCourses,
-      advancedCourses
-    );
+    const [
+      disabledCourses,
+      occupiedCourses,
+      voluntaryCourse,
+    ] = assignBasicCourses(basicCourses, advancedCourses);
     setDisabledBasicCourses(() => disabledCourses);
-    const allCoursesOccupied = occupiedCourses.every((n) => n);
-    setSelectionValid(allCoursesOccupied);
+    const allCoursesOccupied =
+      occupiedCourses.every((n) => n) &&
+      [...occupiedCourses, voluntaryCourse].some((c) =>
+        CATEGORIES["Künstlerisches Fach"].BasicCourses.includes(c)
+      );
+    if (allCoursesOccupied) {
+      setValidRoutes(["/leistungskurse", "/grundkurse", "/ueberblick"]);
+    } else {
+      setValidRoutes(["/leistungskurse", "/grundkurse"]);
+    }
   }, [basicCourses]);
 
   return (

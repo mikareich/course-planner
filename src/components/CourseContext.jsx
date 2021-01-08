@@ -1,44 +1,16 @@
 import React, { createContext, useState } from "react";
-import { CATEGORIES } from "../utils/courses";
 
 const CourseContext = createContext();
 
 function CourseProvider({ children }) {
-  const [advancedCourses, setAdvancedCourses] = useState([
-    "Englisch",
-    "Mathematik",
-    "Deutsch",
-  ]);
-  const [basicCourses, setBasicCourses] = useState([
-    "Sport",
-    "Geschichte",
-    "Sozialkunde/ Erdkunde",
-    "Bildende Kunst",
-    "Ethik",
-    "Physik",
-    "Chemie",
-    "Informatik",
-  ]);
+  const [advancedCourses, setAdvancedCourses] = useState([]);
+  const [basicCourses, setBasicCourses] = useState([]);
   const [disabledAdvancedCourses, setDisabledAdvancedCourses] = useState([]);
   const [disabledBasicCourses, setDisabledBasicCourses] = useState([]);
-  const [selectedCombination, setSelectedCombination] = useState({
-    id: 0,
-    advancedCourses: [
-      CATEGORIES.Fremdsprache,
-      CATEGORIES.Mathematik,
-      CATEGORIES.Deutsch,
-    ],
-    mandatoryBasicCourseCategories: [
-      CATEGORIES["Gesellschaftswissenschaftliches Fach"].BasicCourses,
-      CATEGORIES.Naturwissenschaft,
-      CATEGORIES.Religionslehre.BasicCourses,
-      CATEGORIES.Sport,
-      CATEGORIES["Verpflichtende Kurse 1"],
-      CATEGORIES["Verpflichtende Kurse 2"],
-    ],
-    mandatoryWeeklyHours: 32,
-  });
+  const [selectedCombination, setSelectedCombination] = useState();
   const [voluntaryCourse, setVoluntaryCourse] = useState(null);
+  const [indicator, setIndicator] = useState("");
+  const [validRoutes, setValidRoutes] = useState(["/leistungskurse"]);
 
   const toggleCourse = (type, name) => {
     const associatedArray =
@@ -72,6 +44,10 @@ function CourseProvider({ children }) {
         setSelectedCombination,
         voluntaryCourse,
         setVoluntaryCourse,
+        indicator,
+        setIndicator,
+        validRoutes,
+        setValidRoutes,
       }}
     >
       {children}
