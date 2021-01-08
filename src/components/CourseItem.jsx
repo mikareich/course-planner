@@ -1,36 +1,45 @@
 import React, { useContext, useEffect, useState } from "react";
-import { courseContext } from "./CourseContext";
+import { CourseContext } from "./CourseContext";
 
-function CourseItem({ name }) {
-  const { disabledCourses, selectCourse, unselectCourse } = useContext(
-    courseContext
-  );
+function CourseItem({ name, type, mandatory }) {
+  const {
+    disabledAdvancedCourses,
+    disabledBasicCourses,
+    toggleCourse,
+    basicCourses,
+    advancedCourses,
+  } = useContext(CourseContext);
+
   const [disabled, setDisabled] = useState(false);
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(mandatory);
 
-  // disable when listet as disabled
-  useEffect(() => setDisabled(disabledCourses.includes(name)), [
-    disabledCourses,
-  ]);
+  useEffect(() => {
+    if (type === "overview") return;
+    const isIncluded =
+      type === "advanced-course"
+        ? advancedCourses.includes(name)
+        : basicCourses.includes(name);
+    setSelected(isIncluded);
+  }, [basicCourses, advancedCourses]);
 
-  // toggle selection
-  const toggleCourse = () => {
-    if (disabled) return;
-    setSelected(!selected);
+  useEffect(() => {
+    if (type === "overview") return;
 
-    if (selected) {
-      unselectCourse(name);
-    } else {
-      selectCourse(name);
-    }
-  };
+    const isIncluded =
+      type === "advanced-course"
+        ? disabledAdvancedCourses.includes(name)
+        : disabledBasicCourses.includes(name);
+    setDisabled(isIncluded);
+  }, [disabledAdvancedCourses, disabledBasicCourses]);
 
   return (
     <button
       className={`course-item 
-      ${selected && "selected"} ${disabled && "disabled"}`}
+      ${selected ? "selected" : ""} ${disabled ? "disabled" : ""} ${
+        mandatory && type !== "overview" ? "mandatory" : ""
+      }`}
       type="button"
-      onClick={toggleCourse}
+      onClick={() => !disabled && !mandatory && toggleCourse(type, name)}
     >
       <span className="name">{name}</span>
     </button>

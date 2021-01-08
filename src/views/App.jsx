@@ -1,32 +1,32 @@
 import React from "react";
-import Category from "../components/Category";
+import { Switch, Route, Redirect, Link } from "react-router-dom";
 import { CourseProvider } from "../components/CourseContext";
-import CourseItem from "../components/CourseItem";
-import { subjectAreas } from "../modules/courses";
+import NavBar from "../components/NavBar";
+
+// Routes
+import AdvancedCourses from "./AdvancedCourses";
+import BasicCourses from "./BasicCourses";
+import Overview from "./Overview";
 
 function App() {
   return (
     <div className="App">
       <CourseProvider>
-        <header className="header" />
+        <NavBar />
 
         <main className="main">
-          {
-            // display categories with dedicated courses
-            Object.entries(subjectAreas).map(([subject, courses]) => (
-              <Category label={subject} key={subject}>
-                {
-                  // display courses
-                  courses.flat().map((courseName) => (
-                    <CourseItem name={courseName} key={courseName} />
-                  ))
-                }
-              </Category>
-            ))
-          }
+          <Switch>
+            <Route path="/leistungskurse" component={AdvancedCourses} />
+            <Route path="/grundkurse" component={BasicCourses} />
+            <Route path="/ueberblick" component={Overview} />
+
+            <Route exact path="/*">
+              <Redirect to="/leistungskurse" />
+            </Route>
+          </Switch>
         </main>
 
-        <footer className="footer" />
+        <footer className="footer">*Verpflichtend</footer>
       </CourseProvider>
     </div>
   );
